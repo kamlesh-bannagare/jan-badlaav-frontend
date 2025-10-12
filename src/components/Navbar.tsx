@@ -21,6 +21,7 @@ const Navbar = () => {
     { path: '/about', label: t('about') },
     { path: '/vision', label: t('vision') },
     { path: '/founder', label: t('founder') },
+    { path: '/media', label: t('media') },
     { path: '/join', label: t('join') },
     { path: '/contact', label: t('contact') },
   ];

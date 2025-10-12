@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Vision from "./pages/Vision";
 import Founder from "./pages/Founder";
+import Media from "./pages/Media";
 import Join from "./pages/Join";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -34,6 +35,7 @@ const App = () => (
                 <Route path="/about" element={<About />} />
                 <Route path="/vision" element={<Vision />} />
                 <Route path="/founder" element={<Founder />} />
+                <Route path="/media" element={<Media />} />
                 <Route path="/join" element={<Join />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
