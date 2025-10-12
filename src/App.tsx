@@ -10,6 +10,8 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Vision from "./pages/Vision";
 import Founder from "./pages/Founder";
+import Factsheet from "./pages/Factsheet";
+import Fellowship from "./pages/Fellowship";
 import Media from "./pages/Media";
 import Join from "./pages/Join";
 import Contact from "./pages/Contact";
@@ -35,6 +37,8 @@ const App = () => (
                 <Route path="/about" element={<About />} />
                 <Route path="/vision" element={<Vision />} />
                 <Route path="/founder" element={<Founder />} />
+                <Route path="/factsheet" element={<Factsheet />} />
+                <Route path="/fellowship" element={<Fellowship />} />
                 <Route path="/media" element={<Media />} />
                 <Route path="/join" element={<Join />} />
                 <Route path="/contact" element={<Contact />} />
