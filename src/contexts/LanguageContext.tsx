@@ -19,7 +19,7 @@ const translations: Record<Language, Record<string, string>> = {
     contact: 'संपर्क',
     
     // Hero Section
-    heroTitle: 'जनता बदलाव',
+    heroTitle: 'जन बदलाव',
     heroSubtitle: 'बदलाची वेळ आली आहे',
     heroDescription: 'लोकांसाठी, लोकांद्वारे चालवलेली राजकीय चळवळ. आपण सर्वांसाठी समान संधी, पारदर्शकता आणि विकास यावर विश्वास ठेवतो.',
     joinMovement: 'चळवळीत सामील व्हा',
@@ -27,7 +27,7 @@ const translations: Record<Language, Record<string, string>> = {
     
     // About Section
     aboutTitle: 'आमच्याबद्दल',
-    aboutDescription: 'जनता बदलाव ही एक राजकीय चळवळ आहे जी समाजातील सर्व स्तरांतील लोकांना सशक्त करण्यासाठी समर्पित आहे. आम्ही पारदर्शक शासन, समान संधी आणि शाश्वत विकासावर विश्वास ठेवतो.',
+    aboutDescription: 'जन बदलाव ही एक राजकीय चळवळ आहे जी समाजातील सर्व स्तरांतील लोकांना सशक्त करण्यासाठी समर्पित आहे. आम्ही पारदर्शक शासन, समान संधी आणि शाश्वत विकासावर विश्वास ठेवतो.',
     
     // Vision Section
     visionTitle: 'आमची दृष्टी',
@@ -39,11 +39,11 @@ const translations: Record<Language, Record<string, string>> = {
     // Founder Section
     founderTitle: 'संस्थापक',
     founderName: 'यश गोरखेडे',
-    founderDescription: 'यश गोरखेडे यांनी जनता बदलाव चळवळीची स्थापना केली आहे ज्याचा उद्देश समाजातील प्रत्येक व्यक्तीला सशक्त करणे आहे. त्यांची दृष्टी एक न्याय्य आणि समृद्ध समाजाची आहे.',
+    founderDescription: 'यश गोरखेडे यांनी जन बदलाव चळवळीची स्थापना केली आहे ज्याचा उद्देश समाजातील प्रत्येक व्यक्तीला सशक्त करणे आहे. त्यांची दृष्टी एक न्याय्य आणि समृद्ध समाजाची आहे.',
     
     // Join Section
     joinTitle: 'आमच्यासोबत जुडा',
-    joinDescription: 'बदलाचा भाग बना. आज जनता बदलावच्या सदस्य व्हा आणि उज्ज्वल भविष्याच्या निर्मितीमध्ये आपला वाटा उचला.',
+    joinDescription: 'बदलाचा भाग बना. आज जन बदलावच्या सदस्य व्हा आणि उज्ज्वल भविष्याच्या निर्मितीमध्ये आपला वाटा उचला.',
     becomeMember: 'सदस्य व्हा',
     
     // Contact Section
@@ -65,7 +65,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Media Page
     media: 'मीडिया',
     mediaTitle: 'मीडिया गॅलरी',
-    mediaDescription: 'जनता बदलाव चळवळीची छायाचित्रे, व्हिडिओ आणि बातम्या पहा',
+    mediaDescription: 'जन बदलाव चळवळीची छायाचित्रे, व्हिडिओ आणि बातम्या पहा',
     images: 'छायाचित्रे',
     videos: 'व्हिडिओ',
     news: 'बातम्या',
@@ -79,16 +79,16 @@ const translations: Record<Language, Record<string, string>> = {
     videoTitle1: 'संस्थापकाचे भाषण',
     videoTitle2: 'चळवळीचे उद्दिष्ट',
     videoTitle3: 'विकास आराखडा',
-    newsTitle1: 'जनता बदलाव चळवळीचा विस्तार',
+    newsTitle1: 'जन बदलाव चळवळीचा विस्तार',
     newsTitle2: 'युवांसाठी नवीन योजना',
     newsTitle3: 'सामाजिक न्यायासाठी लढा',
-    newsExcerpt1: 'जनता बदलाव चळवळ राज्यभर वेगाने वाढत आहे. हजारो नवीन सदस्य दररोज सामील होत आहेत.',
+    newsExcerpt1: 'जन बदलाव चळवळ राज्यभर वेगाने वाढत आहे. हजारो नवीन सदस्य दररोज सामील होत आहेत.',
     newsExcerpt2: 'युवा पिढीला सशक्त करण्यासाठी नवीन शैक्षणिक आणि रोजगार योजना सुरू केल्या आहेत.',
     newsExcerpt3: 'सामाजिक न्याय आणि समानतेसाठी चळवळ निर्भयपणे आवाज उठवत आहे.',
     
     // Factsheet Page
     factsheet: 'तथ्यपत्रक',
-    factsheetTitle: 'जनता बदलाव तथ्यपत्रक',
+    factsheetTitle: 'जन बदलाव तथ्यपत्रक',
     factsheetSubtitle: 'आमच्या चळवळीबद्दल महत्त्वाची माहिती आणि आकडेवारी',
     factsheetMembers: 'सदस्य संख्या',
     factsheetMembersValue: '50,000+',
@@ -99,7 +99,7 @@ const translations: Record<Language, Record<string, string>> = {
     factsheetEstablished: 'स्थापना',
     factsheetEstablishedValue: '2024',
     factsheetAboutTitle: 'आमच्याबद्दल',
-    factsheetAboutText1: 'जनता बदलाव ही एक राजकीय चळवळ आहे जी समाजातील सर्व स्तरांतील लोकांना सशक्त करण्यासाठी समर्पित आहे. आम्ही पारदर्शक शासन, समान संधी आणि शाश्वत विकासावर विश्वास ठेवतो.',
+    factsheetAboutText1: 'जन बदलाव ही एक राजकीय चळवळ आहे जी समाजातील सर्व स्तरांतील लोकांना सशक्त करण्यासाठी समर्पित आहे. आम्ही पारदर्शक शासन, समान संधी आणि शाश्वत विकासावर विश्वास ठेवतो.',
     factsheetAboutText2: 'आमची चळवळ सामाजिक न्याय, आर्थिक समृद्धी आणि समावेशी विकासाच्या तत्त्वांवर आधारित आहे. आम्ही प्रत्येक नागरिकाला समान संधी आणि सन्मानपूर्ण जीवन मिळावे यासाठी कार्यरत आहोत.',
     factsheetGoalsTitle: 'आमची उद्दिष्टे',
     factsheetGoal1: 'पारदर्शक आणि जबाबदार शासन स्थापित करणे',
@@ -161,7 +161,7 @@ const translations: Record<Language, Record<string, string>> = {
     contact: 'Contact',
     
     // Hero Section
-    heroTitle: 'Janta Badlaav',
+    heroTitle: 'jan Badlaav',
     heroSubtitle: 'Time for Change',
     heroDescription: 'A political movement of the people, by the people, for the people. We believe in equal opportunities, transparency, and development for all.',
     joinMovement: 'Join the Movement',
@@ -169,7 +169,7 @@ const translations: Record<Language, Record<string, string>> = {
     
     // About Section
     aboutTitle: 'About Us',
-    aboutDescription: 'Janta Badlaav is a political movement dedicated to empowering people from all walks of life. We believe in transparent governance, equal opportunities, and sustainable development.',
+    aboutDescription: 'jan Badlaav is a political movement dedicated to empowering people from all walks of life. We believe in transparent governance, equal opportunities, and sustainable development.',
     
     // Vision Section
     visionTitle: 'Our Vision',
@@ -181,11 +181,11 @@ const translations: Record<Language, Record<string, string>> = {
     // Founder Section
     founderTitle: 'Founder',
     founderName: 'Yash Gourkhede',
-    founderDescription: 'Yash Gourkhede founded the Janta Badlaav movement with a vision to empower every individual in society. His vision is of a just and prosperous society.',
+    founderDescription: 'Yash Gourkhede founded the jan Badlaav movement with a vision to empower every individual in society. His vision is of a just and prosperous society.',
     
     // Join Section
     joinTitle: 'Join Us',
-    joinDescription: 'Be a part of the change. Become a member of Janta Badlaav today and contribute to building a brighter future.',
+    joinDescription: 'Be a part of the change. Become a member of jan Badlaav today and contribute to building a brighter future.',
     becomeMember: 'Become a Member',
     
     // Contact Section
@@ -207,7 +207,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Media Page
     media: 'Media',
     mediaTitle: 'Media Gallery',
-    mediaDescription: 'View photos, videos, and news from the Janta Badlaav movement',
+    mediaDescription: 'View photos, videos, and news from the jan Badlaav movement',
     images: 'Images',
     videos: 'Videos',
     news: 'News',
@@ -221,16 +221,16 @@ const translations: Record<Language, Record<string, string>> = {
     videoTitle1: 'Founder\'s Speech',
     videoTitle2: 'Movement Goals',
     videoTitle3: 'Development Roadmap',
-    newsTitle1: 'Janta Badlaav Movement Expands',
+    newsTitle1: 'jan Badlaav Movement Expands',
     newsTitle2: 'New Youth Programs',
     newsTitle3: 'Fight for Social Justice',
-    newsExcerpt1: 'The Janta Badlaav movement is growing rapidly across the state. Thousands of new members are joining daily.',
+    newsExcerpt1: 'The jan Badlaav movement is growing rapidly across the state. Thousands of new members are joining daily.',
     newsExcerpt2: 'New educational and employment programs have been launched to empower the younger generation.',
     newsExcerpt3: 'The movement is fearlessly raising its voice for social justice and equality.',
     
     // Factsheet Page
     factsheet: 'Factsheet',
-    factsheetTitle: 'Janta Badlaav Factsheet',
+    factsheetTitle: 'jan Badlaav Factsheet',
     factsheetSubtitle: 'Important information and statistics about our movement',
     factsheetMembers: 'Members',
     factsheetMembersValue: '50,000+',
@@ -241,7 +241,7 @@ const translations: Record<Language, Record<string, string>> = {
     factsheetEstablished: 'Established',
     factsheetEstablishedValue: '2024',
     factsheetAboutTitle: 'About Us',
-    factsheetAboutText1: 'Janta Badlaav is a political movement dedicated to empowering people from all walks of life. We believe in transparent governance, equal opportunities, and sustainable development.',
+    factsheetAboutText1: 'jan Badlaav is a political movement dedicated to empowering people from all walks of life. We believe in transparent governance, equal opportunities, and sustainable development.',
     factsheetAboutText2: 'Our movement is based on the principles of social justice, economic prosperity, and inclusive development. We are working to ensure that every citizen gets equal opportunities and a dignified life.',
     factsheetGoalsTitle: 'Our Goals',
     factsheetGoal1: 'Establishing transparent and accountable governance',
@@ -303,7 +303,7 @@ const translations: Record<Language, Record<string, string>> = {
     contact: 'संपर्क',
     
     // Hero Section
-    heroTitle: 'जनता बदलाव',
+    heroTitle: 'जन बदलाव',
     heroSubtitle: 'बदलाव का समय आ गया है',
     heroDescription: 'लोगों के लिए, लोगों द्वारा चलाई जाने वाली राजनीतिक आंदोलन। हम सभी के लिए समान अवसर, पारदर्शिता और विकास में विश्वास करते हैं।',
     joinMovement: 'आंदोलन में शामिल हों',
@@ -311,7 +311,7 @@ const translations: Record<Language, Record<string, string>> = {
     
     // About Section
     aboutTitle: 'हमारे बारे में',
-    aboutDescription: 'जनता बदलाव एक राजनीतिक आंदोलन है जो समाज के सभी स्तरों के लोगों को सशक्त करने के लिए समर्पित है। हम पारदर्शी शासन, समान अवसर और सतत विकास में विश्वास करते हैं।',
+    aboutDescription: 'जन बदलाव एक राजनीतिक आंदोलन है जो समाज के सभी स्तरों के लोगों को सशक्त करने के लिए समर्पित है। हम पारदर्शी शासन, समान अवसर और सतत विकास में विश्वास करते हैं।',
     
     // Vision Section
     visionTitle: 'हमारा विज़न',
@@ -323,11 +323,11 @@ const translations: Record<Language, Record<string, string>> = {
     // Founder Section
     founderTitle: 'संस्थापक',
     founderName: 'यश गोरखेडे',
-    founderDescription: 'यश गोरखेडे ने जनता बदलाव आंदोलन की स्थापना की है जिसका उद्देश्य समाज में हर व्यक्ति को सशक्त करना है। उनका विज़न एक न्यायपूर्ण और समृद्ध समाज का है।',
+    founderDescription: 'यश गोरखेडे ने जन बदलाव आंदोलन की स्थापना की है जिसका उद्देश्य समाज में हर व्यक्ति को सशक्त करना है। उनका विज़न एक न्यायपूर्ण और समृद्ध समाज का है।',
     
     // Join Section
     joinTitle: 'हमसे जुड़ें',
-    joinDescription: 'बदलाव का हिस्सा बनें। आज ही जनता बदलाव के सदस्य बनें और उज्ज्वल भविष्य के निर्माण में अपना योगदान दें।',
+    joinDescription: 'बदलाव का हिस्सा बनें। आज ही जन बदलाव के सदस्य बनें और उज्ज्वल भविष्य के निर्माण में अपना योगदान दें।',
     becomeMember: 'सदस्य बनें',
     
     // Contact Section
@@ -349,7 +349,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Media Page
     media: 'मीडिया',
     mediaTitle: 'मीडिया गैलरी',
-    mediaDescription: 'जनता बदलाव आंदोलन की तस्वीरें, वीडियो और समाचार देखें',
+    mediaDescription: 'जन बदलाव आंदोलन की तस्वीरें, वीडियो और समाचार देखें',
     images: 'तस्वीरें',
     videos: 'वीडियो',
     news: 'समाचार',
@@ -363,16 +363,16 @@ const translations: Record<Language, Record<string, string>> = {
     videoTitle1: 'संस्थापक का भाषण',
     videoTitle2: 'आंदोलन के लक्ष्य',
     videoTitle3: 'विकास योजना',
-    newsTitle1: 'जनता बदलाव आंदोलन का विस्तार',
+    newsTitle1: 'जन बदलाव आंदोलन का विस्तार',
     newsTitle2: 'युवाओं के लिए नई योजनाएं',
     newsTitle3: 'सामाजिक न्याय के लिए लड़ाई',
-    newsExcerpt1: 'जनता बदलाव आंदोलन पूरे राज्य में तेजी से बढ़ रहा है। हजारों नए सदस्य रोज शामिल हो रहे हैं।',
+    newsExcerpt1: 'जन बदलाव आंदोलन पूरे राज्य में तेजी से बढ़ रहा है। हजारों नए सदस्य रोज शामिल हो रहे हैं।',
     newsExcerpt2: 'युवा पीढ़ी को सशक्त करने के लिए नए शैक्षिक और रोजगार कार्यक्रम शुरू किए गए हैं।',
     newsExcerpt3: 'आंदोलन सामाजिक न्याय और समानता के लिए निडरता से आवाज उठा रहा है।',
     
     // Factsheet Page
     factsheet: 'फैक्टशीट',
-    factsheetTitle: 'जनता बदलाव फैक्टशीट',
+    factsheetTitle: 'जन बदलाव फैक्टशीट',
     factsheetSubtitle: 'हमारे आंदोलन के बारे में महत्वपूर्ण जानकारी और आंकड़े',
     factsheetMembers: 'सदस्य संख्या',
     factsheetMembersValue: '50,000+',
@@ -383,7 +383,7 @@ const translations: Record<Language, Record<string, string>> = {
     factsheetEstablished: 'स्थापना',
     factsheetEstablishedValue: '2024',
     factsheetAboutTitle: 'हमारे बारे में',
-    factsheetAboutText1: 'जनता बदलाव एक राजनीतिक आंदोलन है जो समाज के सभी स्तरों के लोगों को सशक्त करने के लिए समर्पित है। हम पारदर्शी शासन, समान अवसर और सतत विकास में विश्वास करते हैं।',
+    factsheetAboutText1: 'जन बदलाव एक राजनीतिक आंदोलन है जो समाज के सभी स्तरों के लोगों को सशक्त करने के लिए समर्पित है। हम पारदर्शी शासन, समान अवसर और सतत विकास में विश्वास करते हैं।',
     factsheetAboutText2: 'हमारा आंदोलन सामाजिक न्याय, आर्थिक समृद्धि और समावेशी विकास के सिद्धांतों पर आधारित है। हम प्रत्येक नागरिक को समान अवसर और सम्मानजनक जीवन सुनिश्चित करने के लिए काम कर रहे हैं।',
     factsheetGoalsTitle: 'हमारे लक्ष्य',
     factsheetGoal1: 'पारदर्शी और जवाबदेह शासन की स्थापना',

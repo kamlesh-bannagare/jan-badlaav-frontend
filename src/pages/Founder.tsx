@@ -1,7 +1,7 @@
 import { Quote } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from '@/contexts/LanguageContext';
-import founderImage from '@/assets/founder.jpg';
+import founderImage from '@/assets/founder.jpeg';
 
 const Founder = () => {
   const { t } = useLanguage();
