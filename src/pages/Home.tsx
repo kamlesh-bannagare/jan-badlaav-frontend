@@ -101,7 +101,7 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
         <Carousel 
-          className="w-full h-full"
+          className="absolute inset-0"
           opts={{
             align: "start",
             loop: true,
@@ -112,10 +112,10 @@ const Home = () => {
             }),
           ]}
         >
-          <CarouselContent className="h-full">
+          <CarouselContent className="h-[600px]">
             {heroImages.map((image, index) => (
-              <CarouselItem key={index} className="h-full">
-                <div className="absolute inset-0">
+              <CarouselItem key={index} className="h-[600px] p-0">
+                <div className="relative h-full w-full">
                   <img 
                     src={image} 
                     alt={`Hero ${index + 1}`}
