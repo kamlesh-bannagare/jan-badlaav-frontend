@@ -2,11 +2,17 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Users, Target, Heart, BookOpen, Handshake, Award, TrendingUp, MessageSquare, CheckCircle2, Building2, GraduationCap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { useLanguage } from '@/contexts/LanguageContext';
 import heroBanner from '@/assets/hero-banner.jpg';
+import founder from '@/assets/founder.jpeg';
+import logo from '@/assets/logo.jpg';
+import Autoplay from "embla-carousel-autoplay";
 
 const Home = () => {
   const { t } = useLanguage();
+
+  const heroImages = [heroBanner, founder, logo];
 
   const values = [
     {
@@ -94,14 +100,35 @@ const Home = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img 
-            src={heroBanner} 
-            alt="Hero Banner"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50" />
-        </div>
+        <Carousel 
+          className="w-full h-full"
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          plugins={[
+            Autoplay({
+              delay: 4000,
+            }),
+          ]}
+        >
+          <CarouselContent className="h-full">
+            {heroImages.map((image, index) => (
+              <CarouselItem key={index} className="h-full">
+                <div className="absolute inset-0">
+                  <img 
+                    src={image} 
+                    alt={`Hero ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50" />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="left-4 bg-white/10 backdrop-blur border-white/20 text-white hover:bg-white/20" />
+          <CarouselNext className="right-4 bg-white/10 backdrop-blur border-white/20 text-white hover:bg-white/20" />
+        </Carousel>
         
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
