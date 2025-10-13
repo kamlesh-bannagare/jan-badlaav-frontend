@@ -94,12 +94,12 @@ const Home = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${heroBanner})`,
-          }}
-        >
+        <div className="absolute inset-0">
+          <img 
+            src={heroBanner} 
+            alt="Hero Banner"
+            className="w-full h-full object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50" />
         </div>
         
