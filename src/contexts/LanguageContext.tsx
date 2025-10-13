@@ -117,6 +117,60 @@ const translations: Record<Language, Record<string, string>> = {
     factsheetPrinciple4Title: 'सहभाग',
     factsheetPrinciple4Text: 'नागरिकांचा निर्णय प्रक्रियेत सक्रिय सहभाग',
     
+    // Home Page - Focus Areas
+    focusAreasTitle: 'आमचे प्रमुख केंद्र',
+    focusAreasSubtitle: 'आम्ही ज्या मुख्य क्षेत्रांवर लक्ष केंद्रित करतो',
+    focusEducation: 'शिक्षण',
+    focusEducationText: 'प्रत्येकासाठी दर्जेदार आणि सुलभ शिक्षण सुनिश्चित करणे',
+    focusInfrastructure: 'पायाभूत सुविधा',
+    focusInfrastructureText: 'आधुनिक आणि टिकाऊ पायाभूत सुविधा विकास',
+    focusEmployment: 'रोजगार',
+    focusEmploymentText: 'युवकांसाठी रोजगाराच्या संधी निर्माण करणे',
+    focusHealthcare: 'आरोग्य सेवा',
+    focusHealthcareText: 'सर्वांसाठी सुलभ आणि दर्जेदार आरोग्य सेवा',
+
+    // Home Page - Achievements
+    achievementsTitle: 'आमची उपलब्धता',
+    achievementsSubtitle: 'आमच्या कार्याचे परिणाम',
+    achievement1Number: '50,000+',
+    achievement1Title: 'सक्रिय सदस्य',
+    achievement2Number: '100+',
+    achievement2Title: 'कार्यक्रम यशस्वी',
+    achievement3Number: '25+',
+    achievement3Title: 'जिल्हे कव्हर',
+    achievement4Number: '1000+',
+    achievement4Title: 'दैनंदिन सहभाग',
+
+    // Home Page - Founder Section
+    founderSectionTitle: 'संस्थापक यश गोरखेडे',
+    founderSectionText1: 'यश गोरखेडे यांनी जनता बदलाव चळवळीची स्थापना केली आहे ज्याचा उद्देश समाजातील प्रत्येक व्यक्तीला सशक्त करणे आहे. त्यांचा विश्वास आहे की खरा बदल तेव्हाच होतो जेव्हा सर्वसामान्य लोक आपल्या शक्तीची जाणीव करतात.',
+    founderSectionText2: 'त्यांची दृष्टी एक न्याय्य, समृद्ध आणि समावेशक समाजाची आहे जिथे प्रत्येक नागरिकाला समान संधी आणि सन्मानपूर्ण जीवन मिळते. त्यांच्या नेतृत्वाखाली, चळवळ राज्यभर वेगाने वाढत आहे.',
+    learnMoreFounder: 'संस्थापकांबद्दल अधिक',
+
+    // Home Page - How to Join
+    howToJoinTitle: 'सामील होण्याची प्रक्रिया',
+    howToJoinSubtitle: 'तीन सोप्या चरणांमध्ये आमच्या चळवळीत सामील व्हा',
+    wayToJoin1: 'पहिला चरण: नोंदणी',
+    wayToJoin1Text: 'आमच्या वेबसाइटवर जाऊन सदस्यत्व फॉर्म भरा आणि चळवळीचा भाग बना',
+    wayToJoin2: 'दुसरा चरण: प्रशिक्षण',
+    wayToJoin2Text: 'आमच्या मूल्यांबद्दल, उद्दिष्टांबद्दल आणि कार्यपद्धतीबद्दल प्रशिक्षण घ्या',
+    wayToJoin3: 'तिसरा चरण: सक्रिय सहभाग',
+    wayToJoin3Text: 'आपल्या क्षेत्रातील कार्यक्रमांमध्ये सहभागी होऊन बदल घडवा',
+    startJourney: 'प्रवास सुरू करा',
+
+    // Home Page - Testimonials
+    testimonialTitle: 'लोकांचे अनुभव',
+    testimonialSubtitle: 'आमच्या सदस्यांनी काय म्हटले ते ऐका',
+    testimonialName1: 'राजेश पाटील',
+    testimonialRole1: 'चळवळ सदस्य, पुणे',
+    testimonialText1: 'जनता बदलावमुळे मला समाजसेवेची संधी मिळाली आणि मी खऱ्या अर्थाने बदल घडवू शकतो असे जाणवले.',
+    testimonialName2: 'प्रिया शर्मा',
+    testimonialRole2: 'युवा नेता, नागपूर',
+    testimonialText2: 'या चळवळीने मला नेतृत्व कौशल्य विकसित करण्यास मदत केली आणि समाजात सकारात्मक बदल घडवण्यासाठी प्रेरित केले.',
+    testimonialName3: 'अमित देशमुख',
+    testimonialRole3: 'स्वयंसेवक, मुंबई',
+    testimonialText3: 'पारदर्शकता आणि जबाबदारी या तत्त्वांवर काम करणारी ही पहिली राजकीय चळवळ आहे. मला याचा भाग असल्याचा अभिमान आहे.',
+
     // Fellowship Page
     fellowship: 'फेलोशिप',
     fellowshipTitle: 'जेबी फेलोशिप कार्यक्रम',
@@ -259,6 +313,60 @@ const translations: Record<Language, Record<string, string>> = {
     factsheetPrinciple4Title: 'Participation',
     factsheetPrinciple4Text: 'Active participation of citizens in decision-making',
     
+    // Home Page - Focus Areas
+    focusAreasTitle: 'Our Key Focus Areas',
+    focusAreasSubtitle: 'The main areas we are working on',
+    focusEducation: 'Education',
+    focusEducationText: 'Ensuring quality and accessible education for all',
+    focusInfrastructure: 'Infrastructure',
+    focusInfrastructureText: 'Modern and sustainable infrastructure development',
+    focusEmployment: 'Employment',
+    focusEmploymentText: 'Creating job opportunities for youth',
+    focusHealthcare: 'Healthcare',
+    focusHealthcareText: 'Accessible and quality healthcare for all',
+
+    // Home Page - Achievements
+    achievementsTitle: 'Our Achievements',
+    achievementsSubtitle: 'The results of our work',
+    achievement1Number: '50,000+',
+    achievement1Title: 'Active Members',
+    achievement2Number: '100+',
+    achievement2Title: 'Successful Programs',
+    achievement3Number: '25+',
+    achievement3Title: 'Districts Covered',
+    achievement4Number: '1000+',
+    achievement4Title: 'Daily Engagement',
+
+    // Home Page - Founder Section
+    founderSectionTitle: 'Founder Yash Gourkhede',
+    founderSectionText1: 'Yash Gourkhede founded the Janta Badlaav movement with a vision to empower every individual in society. He believes that real change happens when ordinary people realize their power.',
+    founderSectionText2: 'His vision is of a just, prosperous, and inclusive society where every citizen gets equal opportunities and a dignified life. Under his leadership, the movement is growing rapidly across the state.',
+    learnMoreFounder: 'Learn More About Founder',
+
+    // Home Page - How to Join
+    howToJoinTitle: 'How to Join',
+    howToJoinSubtitle: 'Join our movement in three simple steps',
+    wayToJoin1: 'Step 1: Register',
+    wayToJoin1Text: 'Visit our website and fill the membership form to become part of the movement',
+    wayToJoin2: 'Step 2: Training',
+    wayToJoin2Text: 'Learn about our values, goals, and working methods',
+    wayToJoin3: 'Step 3: Active Participation',
+    wayToJoin3Text: 'Participate in programs in your area and make a difference',
+    startJourney: 'Start Your Journey',
+
+    // Home Page - Testimonials
+    testimonialTitle: 'People\'s Experiences',
+    testimonialSubtitle: 'Hear what our members have to say',
+    testimonialName1: 'Rajesh Patil',
+    testimonialRole1: 'Movement Member, Pune',
+    testimonialText1: 'Janta Badlaav gave me the opportunity to serve society and I felt I could truly make a difference.',
+    testimonialName2: 'Priya Sharma',
+    testimonialRole2: 'Youth Leader, Nagpur',
+    testimonialText2: 'This movement helped me develop leadership skills and inspired me to bring positive change in society.',
+    testimonialName3: 'Amit Deshmukh',
+    testimonialRole3: 'Volunteer, Mumbai',
+    testimonialText3: 'This is the first political movement that works on principles of transparency and accountability. I am proud to be part of it.',
+
     // Fellowship Page
     fellowship: 'Fellowship',
     fellowshipTitle: 'JB Fellowship Program',
@@ -401,6 +509,60 @@ const translations: Record<Language, Record<string, string>> = {
     factsheetPrinciple4Title: 'भागीदारी',
     factsheetPrinciple4Text: 'निर्णय लेने में नागरिकों की सक्रिय भागीदारी',
     
+    // Home Page - Focus Areas
+    focusAreasTitle: 'हमारे प्रमुख फोकस क्षेत्र',
+    focusAreasSubtitle: 'जिन मुख्य क्षेत्रों पर हम काम कर रहे हैं',
+    focusEducation: 'शिक्षा',
+    focusEducationText: 'सभी के लिए गुणवत्तापूर्ण और सुलभ शिक्षा सुनिश्चित करना',
+    focusInfrastructure: 'बुनियादी ढांचा',
+    focusInfrastructureText: 'आधुनिक और टिकाऊ बुनियादी ढांचा विकास',
+    focusEmployment: 'रोजगार',
+    focusEmploymentText: 'युवाओं के लिए रोजगार के अवसर पैदा करना',
+    focusHealthcare: 'स्वास्थ्य सेवा',
+    focusHealthcareText: 'सभी के लिए सुलभ और गुणवत्तापूर्ण स्वास्थ्य सेवा',
+
+    // Home Page - Achievements
+    achievementsTitle: 'हमारी उपलब्धियां',
+    achievementsSubtitle: 'हमारे काम के परिणाम',
+    achievement1Number: '50,000+',
+    achievement1Title: 'सक्रिय सदस्य',
+    achievement2Number: '100+',
+    achievement2Title: 'सफल कार्यक्रम',
+    achievement3Number: '25+',
+    achievement3Title: 'जिले कवर',
+    achievement4Number: '1000+',
+    achievement4Title: 'दैनिक भागीदारी',
+
+    // Home Page - Founder Section
+    founderSectionTitle: 'संस्थापक यश गोरखेडे',
+    founderSectionText1: 'यश गोरखेडे ने जनता बदलाव आंदोलन की स्थापना की है जिसका उद्देश्य समाज में हर व्यक्ति को सशक्त करना है। उनका मानना है कि असली बदलाव तब होता है जब आम लोग अपनी शक्ति का एहसास करते हैं।',
+    founderSectionText2: 'उनका विज़न एक न्यायपूर्ण, समृद्ध और समावेशी समाज का है जहां हर नागरिक को समान अवसर और सम्मानजनक जीवन मिले। उनके नेतृत्व में, आंदोलन पूरे राज्य में तेजी से बढ़ रहा है।',
+    learnMoreFounder: 'संस्थापक के बारे में अधिक जानें',
+
+    // Home Page - How to Join
+    howToJoinTitle: 'शामिल होने की प्रक्रिया',
+    howToJoinSubtitle: 'तीन आसान चरणों में हमारे आंदोलन में शामिल हों',
+    wayToJoin1: 'पहला चरण: पंजीकरण',
+    wayToJoin1Text: 'हमारी वेबसाइट पर जाएं और सदस्यता फॉर्म भरें और आंदोलन का हिस्सा बनें',
+    wayToJoin2: 'दूसरा चरण: प्रशिक्षण',
+    wayToJoin2Text: 'हमारे मूल्यों, लक्ष्यों और कार्य पद्धति के बारे में प्रशिक्षण लें',
+    wayToJoin3: 'तीसरा चरण: सक्रिय भागीदारी',
+    wayToJoin3Text: 'अपने क्षेत्र में कार्यक्रमों में भाग लें और बदलाव लाएं',
+    startJourney: 'यात्रा शुरू करें',
+
+    // Home Page - Testimonials
+    testimonialTitle: 'लोगों के अनुभव',
+    testimonialSubtitle: 'सुनें कि हमारे सदस्यों का क्या कहना है',
+    testimonialName1: 'राजेश पाटिल',
+    testimonialRole1: 'आंदोलन सदस्य, पुणे',
+    testimonialText1: 'जनता बदलाव ने मुझे समाज सेवा का अवसर दिया और मुझे लगा कि मैं वास्तव में बदलाव ला सकता हूं।',
+    testimonialName2: 'प्रिया शर्मा',
+    testimonialRole2: 'युवा नेता, नागपुर',
+    testimonialText2: 'इस आंदोलन ने मुझे नेतृत्व कौशल विकसित करने में मदद की और समाज में सकारात्मक बदलाव लाने के लिए प्रेरित किया।',
+    testimonialName3: 'अमित देशमुख',
+    testimonialRole3: 'स्वयंसेवक, मुंबई',
+    testimonialText3: 'यह पहला राजनीतिक आंदोलन है जो पारदर्शिता और जवाबदेही के सिद्धांतों पर काम करता है। मुझे इसका हिस्सा होने पर गर्व है।',
+
     // Fellowship Page
     fellowship: 'फेलोशिप',
     fellowshipTitle: 'जेबी फेलोशिप कार्यक्रम',
