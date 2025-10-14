@@ -171,6 +171,11 @@ const translations: Record<Language, Record<string, string>> = {
     testimonialRole3: 'स्वयंसेवक, मुंबई',
     testimonialText3: 'पारदर्शकता आणि जबाबदारी या तत्त्वांवर काम करणारी ही पहिली राजकीय चळवळ आहे. मला याचा भाग असल्याचा अभिमान आहे.',
 
+    // Donate Page
+    donate: 'दान करा',
+    donateTitle: 'दान करा आणि बदलाला पाठिंबा द्या',
+    donateDescription: 'आपले योगदान आमच्या चळवळीला समाजात सकारात्मक बदल घडवण्यात मदत करते',
+
     // Fellowship Page
     fellowship: 'फेलोशिप',
     fellowshipTitle: 'जेबी फेलोशिप कार्यक्रम',
@@ -367,6 +372,11 @@ const translations: Record<Language, Record<string, string>> = {
     testimonialRole3: 'Volunteer, Mumbai',
     testimonialText3: 'This is the first political movement that works on principles of transparency and accountability. I am proud to be part of it.',
 
+    // Donate Page
+    donate: 'Donate',
+    donateTitle: 'Donate and Support Change',
+    donateDescription: 'Your contribution helps our movement bring positive change to society',
+
     // Fellowship Page
     fellowship: 'Fellowship',
     fellowshipTitle: 'JB Fellowship Program',
@@ -562,6 +572,11 @@ const translations: Record<Language, Record<string, string>> = {
     testimonialName3: 'अमित देशमुख',
     testimonialRole3: 'स्वयंसेवक, मुंबई',
     testimonialText3: 'यह पहला राजनीतिक आंदोलन है जो पारदर्शिता और जवाबदेही के सिद्धांतों पर काम करता है। मुझे इसका हिस्सा होने पर गर्व है।',
+
+    // Donate Page
+    donate: 'दान करें',
+    donateTitle: 'दान करें और परिवर्तन का समर्थन करें',
+    donateDescription: 'आपका योगदान हमारे आंदोलन को समाज में सकारात्मक बदलाव लाने में मदद करता है',
 
     // Fellowship Page
     fellowship: 'फेलोशिप',

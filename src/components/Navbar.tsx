@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X, Globe, MoreHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -24,9 +24,14 @@ const Navbar = () => {
     { path: '/factsheet', label: t('factsheet') },
     { path: '/fellowship', label: t('fellowship') },
     { path: '/media', label: t('media') },
+    { path: '/donate', label: t('donate') },
     { path: '/join', label: t('join') },
     { path: '/contact', label: t('contact') },
   ];
+
+  // Split nav items: show first 5 in navbar, rest in "More" dropdown
+  const primaryNavItems = navItems.slice(0, 5);
+  const secondaryNavItems = navItems.slice(5);
 
   const languages: { code: Language; name: string }[] = [
     { code: 'mr', name: 'मराठी' },
@@ -52,7 +57,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
-            {navItems.map((item) => (
+            {primaryNavItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
@@ -65,6 +70,28 @@ const Navbar = () => {
                 {item.label}
               </Link>
             ))}
+            
+            {/* More dropdown for additional nav items */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="sm" className="gap-2">
+                  <MoreHorizontal className="h-4 w-4" />
+                  <span>More</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="bg-background z-50">
+                {secondaryNavItems.map((item) => (
+                  <DropdownMenuItem key={item.path} asChild>
+                    <Link
+                      to={item.path}
+                      className={`w-full ${isActive(item.path) ? 'bg-muted' : ''}`}
+                    >
+                      {item.label}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           {/* Language Selector & Mobile Menu Button */}

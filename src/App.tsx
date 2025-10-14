@@ -13,6 +13,7 @@ import Founder from "./pages/Founder";
 import Factsheet from "./pages/Factsheet";
 import Fellowship from "./pages/Fellowship";
 import Media from "./pages/Media";
+import Donate from "./pages/Donate";
 import Join from "./pages/Join";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -40,6 +41,7 @@ const App = () => (
                 <Route path="/factsheet" element={<Factsheet />} />
                 <Route path="/fellowship" element={<Fellowship />} />
                 <Route path="/media" element={<Media />} />
+                <Route path="/donate" element={<Donate />} />
                 <Route path="/join" element={<Join />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
