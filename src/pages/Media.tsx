@@ -41,10 +41,10 @@ const Media = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-primary via-primary to-secondary text-primary-foreground overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxIDEuNzktNCA0LTRzNCAxLjc5IDQgNC0xLjc5IDQtNCA0LTQtMS43OS00LTR6bTAgMTJjMC0yLjIxIDEuNzktNCA0LTRzNCAxLjc5IDQgNC0xLjc5IDQtNCA0LTQtMS43OS00LTR6TTEyIDM0YzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00em0wIDEyYzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00em0yNC0yNGMwLTIuMjEgMS43OS00IDQtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNHptMCAyNGMwLTIuMjEgMS43OS00IDQtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-10"></div>
+      <section className="relative py-24 bg-yellow-400 text-black overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMDAiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxIDEuNzktNCA0LTRzNCAxLjc5IDQgNC0xLjc5IDQtNCA0LTQtMS43OS00LTR6bTAgMTJjMC0yLjIxIDEuNzktNCA0LTRzNCAxLjc5IDQgNC0xLjc5IDQtNCA0LTQtMS43OS00LTR6TTEyIDM0YzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00em0wIDEyYzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00em0yNC0yNGMwLTIuMjEgMS43OS00IDQtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNHptMCAyNGMwLTIuMjEgMS43OS00IDQtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-10"></div>
         <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
@@ -75,16 +75,25 @@ const Media = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <Tabs defaultValue="images" className="w-full">
-            <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-12">
-              <TabsTrigger value="images" className="flex items-center gap-2">
+            <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-12 bg-yellow-400">
+              <TabsTrigger 
+                value="images" 
+                className="flex items-center gap-2 data-[state=active]:bg-black data-[state=active]:text-yellow-400"
+              >
                 <Image className="w-4 h-4" />
                 {t('images')}
               </TabsTrigger>
-              <TabsTrigger value="videos" className="flex items-center gap-2">
+              <TabsTrigger 
+                value="videos" 
+                className="flex items-center gap-2 data-[state=active]:bg-black data-[state=active]:text-yellow-400"
+              >
                 <Video className="w-4 h-4" />
                 {t('videos')}
               </TabsTrigger>
-              <TabsTrigger value="news" className="flex items-center gap-2">
+              <TabsTrigger 
+                value="news" 
+                className="flex items-center gap-2 data-[state=active]:bg-black data-[state=active]:text-yellow-400"
+              >
                 <Newspaper className="w-4 h-4" />
                 {t('news')}
               </TabsTrigger>
@@ -95,7 +104,7 @@ const Media = () => {
                 {images.map((image, index) => (
                   <Card 
                     key={image.id} 
-                    className="group overflow-hidden hover-scale animate-fade-in cursor-pointer border-2 hover:border-primary transition-all duration-300" 
+                    className="group overflow-hidden hover-scale animate-fade-in cursor-pointer border-2 border-yellow-400 hover:border-black transition-all duration-300 bg-white" 
                     style={{ animationDelay: `${index * 0.1}s` }}
                     onClick={() => setSelectedImage(image.url)}
                   >
@@ -108,13 +117,13 @@ const Media = () => {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                           <div className="p-4 text-white">
-                            <span className="text-xs bg-primary px-2 py-1 rounded">{image.category}</span>
+                            <span className="text-xs bg-yellow-400 text-black px-2 py-1 rounded">{image.category}</span>
                           </div>
                         </div>
                       </div>
                       <div className="p-4">
-                        <h3 className="font-semibold text-lg">{image.title}</h3>
-                        <p className="text-sm text-muted-foreground mt-1">{image.category}</p>
+                        <h3 className="font-semibold text-lg text-black">{image.title}</h3>
+                        <p className="text-sm text-gray-600 mt-1">{image.category}</p>
                       </div>
                     </CardContent>
                   </Card>
@@ -127,7 +136,7 @@ const Media = () => {
                 {videos.map((video, index) => (
                   <Card 
                     key={video.id} 
-                    className="group overflow-hidden hover-scale animate-fade-in cursor-pointer border-2 hover:border-primary transition-all duration-300" 
+                    className="group overflow-hidden hover-scale animate-fade-in cursor-pointer border-2 border-yellow-400 hover:border-black transition-all duration-300 bg-white" 
                     style={{ animationDelay: `${index * 0.1}s` }}
                     onClick={() => setSelectedVideo(video)}
                   >
@@ -139,8 +148,8 @@ const Media = () => {
                           className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                         <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/50 transition-all duration-300">
-                          <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                            <Play className="w-8 h-8 text-primary-foreground ml-1" fill="currentColor" />
+                          <div className="w-16 h-16 rounded-full bg-yellow-400 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            <Play className="w-8 h-8 text-black ml-1" fill="currentColor" />
                           </div>
                         </div>
                         <div className="absolute bottom-2 right-2 bg-black/80 text-white px-3 py-1 rounded-full text-sm flex items-center gap-1">
@@ -149,8 +158,8 @@ const Media = () => {
                         </div>
                       </div>
                       <div className="p-4">
-                        <h3 className="font-semibold text-lg mb-2">{video.title}</h3>
-                        <p className="text-sm text-muted-foreground line-clamp-2">{video.description}</p>
+                        <h3 className="font-semibold text-lg mb-2 text-black">{video.title}</h3>
+                        <p className="text-sm text-gray-600 line-clamp-2">{video.description}</p>
                       </div>
                     </CardContent>
                   </Card>
@@ -163,7 +172,7 @@ const Media = () => {
                 {news.map((article, index) => (
                   <Card 
                     key={article.id} 
-                    className="group hover-scale animate-fade-in cursor-pointer border-2 hover:border-primary transition-all duration-300 overflow-hidden" 
+                    className="group hover-scale animate-fade-in cursor-pointer border-2 border-yellow-400 hover:border-black transition-all duration-300 overflow-hidden bg-white" 
                     style={{ animationDelay: `${index * 0.1}s` }}
                     onClick={() => setSelectedNews(article)}
                   >
@@ -177,7 +186,7 @@ const Media = () => {
                           />
                         </div>
                         <div className="md:w-2/3 p-6">
-                          <div className="flex items-center gap-3 mb-3 text-sm text-muted-foreground">
+                          <div className="flex items-center gap-3 mb-3 text-sm text-gray-600">
                             <span className="flex items-center gap-1">
                               <Calendar className="w-4 h-4" />
                               {new Date(article.date).toLocaleDateString()}
@@ -187,9 +196,9 @@ const Media = () => {
                               News Article
                             </span>
                           </div>
-                          <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">{article.title}</h3>
-                          <p className="text-muted-foreground line-clamp-3">{article.excerpt}</p>
-                          <div className="mt-4 flex items-center text-primary font-semibold group-hover:gap-3 gap-2 transition-all">
+                          <h3 className="text-2xl font-bold mb-3 text-black group-hover:text-yellow-600 transition-colors">{article.title}</h3>
+                          <p className="text-gray-600 line-clamp-3">{article.excerpt}</p>
+                          <div className="mt-4 flex items-center text-yellow-600 font-semibold group-hover:gap-3 gap-2 transition-all">
                             <span>{t('readMore')}</span>
                             <span className="group-hover:translate-x-1 transition-transform">→</span>
                           </div>
@@ -206,7 +215,7 @@ const Media = () => {
 
       {/* Image Modal */}
       <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-        <DialogContent className="max-w-5xl p-0">
+        <DialogContent className="max-w-5xl p-0 bg-white border-2 border-yellow-400">
           <img 
             src={selectedImage || ""} 
             alt="Full size" 
@@ -217,40 +226,40 @@ const Media = () => {
 
       {/* Video Modal */}
       <Dialog open={!!selectedVideo} onOpenChange={() => setSelectedVideo(null)}>
-        <DialogContent className="max-w-4xl">
+        <DialogContent className="max-w-4xl bg-white border-2 border-yellow-400">
           <DialogHeader>
-            <DialogTitle className="text-2xl">{selectedVideo?.title}</DialogTitle>
+            <DialogTitle className="text-2xl text-black">{selectedVideo?.title}</DialogTitle>
           </DialogHeader>
           <div className="aspect-video w-full mt-4">
             <iframe
-              className="w-full h-full rounded-lg"
+              className="w-full h-full rounded-lg border-2 border-yellow-400"
               src={selectedVideo?.embedUrl}
               title={selectedVideo?.title}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
           </div>
-          <p className="text-muted-foreground mt-4">{selectedVideo?.description}</p>
+          <p className="text-gray-600 mt-4">{selectedVideo?.description}</p>
         </DialogContent>
       </Dialog>
 
       {/* News Modal */}
       <Dialog open={!!selectedNews} onOpenChange={() => setSelectedNews(null)}>
-        <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
+        <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto bg-white border-2 border-yellow-400">
           <DialogHeader>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+            <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
               <Calendar className="w-4 h-4" />
               {selectedNews && new Date(selectedNews.date).toLocaleDateString()}
             </div>
-            <DialogTitle className="text-3xl">{selectedNews?.title}</DialogTitle>
+            <DialogTitle className="text-3xl text-black">{selectedNews?.title}</DialogTitle>
           </DialogHeader>
           <img 
             src={selectedNews?.image} 
             alt={selectedNews?.title}
-            className="w-full h-64 object-cover rounded-lg my-4"
+            className="w-full h-64 object-cover rounded-lg my-4 border-2 border-yellow-400"
           />
           <div className="prose prose-lg max-w-none">
-            <p className="text-lg leading-relaxed">{selectedNews?.fullContent}</p>
+            <p className="text-lg leading-relaxed text-gray-700">{selectedNews?.fullContent}</p>
           </div>
         </DialogContent>
       </Dialog>

@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import { 
-  ArrowRight, Users, Target, Heart, BookOpen, Handshake, Award, 
+import {
+  ArrowRight, Users, Target, Heart, BookOpen, Handshake, Award,
   TrendingUp, MessageSquare, CheckCircle2, Building2, GraduationCap,
-  MapPin, Calendar, Clock, DollarSign, PieChart, BarChart3, 
+  MapPin, Calendar, Clock, DollarSign, PieChart, BarChart3, IndianRupeeIcon,
   LineChart, Activity, Globe, Phone, Mail, Map, Vote, Shield,
   Flag, Mic, Megaphone, Scale, Landmark, Globe2, Users2,
   AlertTriangle, Star, ChevronRight, Play, Facebook, Twitter, Instagram, Youtube
@@ -115,7 +115,7 @@ const Home = () => {
         successRateMr: "९४%",
         successRateHi: "९४%"
       },
-      color: "from-blue-500 to-cyan-500"
+      color: "from-yellow-400 to-yellow-600"
     },
     {
       icon: Building2,
@@ -139,7 +139,7 @@ const Home = () => {
         jobsMr: "२.५ लाख+",
         jobsHi: "२.५ लाख+"
       },
-      color: "from-green-500 to-emerald-500"
+      color: "from-yellow-500 to-amber-600"
     },
     {
       icon: Handshake,
@@ -163,7 +163,7 @@ const Home = () => {
         skillTrainingMr: "८ लाख+",
         skillTrainingHi: "८ लाख+"
       },
-      color: "from-orange-500 to-red-500"
+      color: "from-amber-500 to-orange-600"
     },
     {
       icon: Heart,
@@ -187,7 +187,7 @@ const Home = () => {
         budgetMr: "४,१०० कोटी",
         budgetHi: "४,१०० करोड़"
       },
-      color: "from-pink-500 to-rose-500"
+      color: "from-yellow-400 to-amber-500"
     },
   ];
 
@@ -304,41 +304,41 @@ const Home = () => {
 
   // Political impact stats - Updated with translations
   const impactStats = [
-    { 
-      label: "Districts Covered", 
-      labelMr: "समाविष्ट जिल्हे", 
+    {
+      label: "Districts Covered",
+      labelMr: "समाविष्ट जिल्हे",
       labelHi: "शामिल जिले",
-      value: "350+", 
+      value: "350+",
       valueMr: "३५०+",
       valueHi: "३५०+",
-      icon: MapPin 
+      icon: MapPin
     },
-    { 
-      label: "Active Volunteers", 
-      labelMr: "सक्रिय स्वयंसेवक", 
+    {
+      label: "Active Volunteers",
+      labelMr: "सक्रिय स्वयंसेवक",
       labelHi: "सक्रिय स्वयंसेवक",
-      value: "50,000+", 
+      value: "50,000+",
       valueMr: "५०,०००+",
       valueHi: "५०,०००+",
-      icon: Users2 
+      icon: Users2
     },
-    { 
-      label: "Years in Service", 
-      labelMr: "सेवेची वर्षे", 
+    {
+      label: "Years in Service",
+      labelMr: "सेवेची वर्षे",
       labelHi: "सेवा के वर्ष",
-      value: "25+", 
+      value: "25+",
       valueMr: "२५+",
       valueHi: "२५+",
-      icon: Calendar 
+      icon: Calendar
     },
-    { 
-      label: "Rallies Conducted", 
-      labelMr: "आयोजित रॅली", 
+    {
+      label: "Rallies Conducted",
+      labelMr: "आयोजित रॅली",
       labelHi: "आयोजित रैलियां",
-      value: "5,000+", 
+      value: "5,000+",
       valueMr: "५,०००+",
       valueHi: "५,०००+",
-      icon: Megaphone 
+      icon: Megaphone
     }
   ];
 
@@ -402,9 +402,9 @@ const Home = () => {
   // Latest News Section
   const latestNews = [
     {
-      title: "Janta Badlaav Launches Digital Governance Initiative",
-      titleMr: "जनता बदलाने डिजिटल गव्हर्नन्स उपक्रम सुरू केला",
-      titleHi: "जनता बदलाव ने डिजिटल गवर्नेंस पहल शुरू की",
+      title: "Jan Badlaav Launches Digital Governance Initiative",
+      titleMr: "जन बदलाव ने डिजिटल गव्हर्नन्स उपक्रम सुरू केला",
+      titleHi: "जन बदलाव ने डिजिटल गवर्नेंस पहल शुरू की",
       date: "2024-01-15",
       excerpt: "New digital platform to enhance citizen-government interaction",
       excerptMr: "नागरिक-सरकार संवाद सुधारण्यासाठी नवीन डिजिटल प्लॅटफॉर्म",
@@ -445,10 +445,10 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Enhanced Hero Section for Political Party */}
       <section className="relative h-[700px] flex items-center justify-center overflow-hidden">
-        <Carousel 
+        <Carousel
           className="absolute inset-0"
           opts={{
             align: "start",
@@ -464,68 +464,89 @@ const Home = () => {
             {heroImages.map((image, index) => (
               <CarouselItem key={index} className="h-[700px] p-0">
                 <div className="relative h-full w-full">
-                  <img 
-                    src={image} 
+                  <img
+                    src={image}
                     alt={`Hero ${index + 1}`}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/70 via-primary/40 to-primary/30" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/30" />
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="left-4 bg-white/10 backdrop-blur border-white/20 text-white hover:bg-white/20" />
-          <CarouselNext className="right-4 bg-white/10 backdrop-blur border-white/20 text-white hover:bg-white/20" />
+          <CarouselPrevious className="left-4 bg-yellow-500/80 backdrop-blur border-yellow-300 text-black hover:bg-yellow-400" />
+          <CarouselNext className="right-4 bg-yellow-500/80 backdrop-blur border-yellow-300 text-black hover:bg-yellow-400" />
         </Carousel>
-        
+
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
-          <Badge className="mb-4 bg-white/20 backdrop-blur text-white border-0">
-            {language === 'mr' ? '🚩 अग्रेसर राजकीय चळवळ' : 
-             language === 'hi' ? '🚩 अग्रणी राजनीतिक आंदोलन' : '🚩 Leading Political Movement'}
-          </Badge>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-            {language === 'mr' ? 'जनता बदल' : 
-             language === 'hi' ? 'जनता बदलाव' : 'Janta Badlaav'}
-          </h1>
-          <p className="text-2xl md:text-3xl mb-4 font-semibold animate-fade-in">
-            {language === 'mr' ? 'सशक्त महाराष्ट्र, समृद्ध भारत' : 
-             language === 'hi' ? 'सशक्त महाराष्ट्र, समृद्ध भारत' : 'Strong Maharashtra, Prosperous India'}
-          </p>
-          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-90 animate-fade-in">
-            {language === 'mr' 
-              ? 'पारदर्शक शासन, सामाजिक न्याय आणि सर्वांसाठी विकासासाठी वचनबद्ध'
+          <h1
+            className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in"
+            style={{
+              fontFamily: '"Noto Sans Devanagari", "Poppins", sans-serif',
+              lineHeight: '1.2',
+            }}
+          >
+            {language === 'mr'
+              ? 'जन बदलाव पक्ष'
               : language === 'hi'
-              ? 'पारदर्शी शासन, सामाजिक न्याय और सभी के लिए विकास के लिए प्रतिबद्ध'
-              : 'Committed to transparent governance, social justice, and development for all citizens.'
-            }
+                ? 'जन बदलाव पक्ष'
+                : 'Jan Badlaav Party'}
+          </h1>
+
+          <p
+            className="text-2xl md:text-3xl mb-4 font-semibold animate-fade-in text-yellow-400"
+            style={{
+              fontFamily: '"Noto Sans Devanagari", "Roboto", sans-serif',
+              lineHeight: '1.8',
+            }}
+          >
+            {language === 'mr'
+              ? 'नवीन लोक, नवीन विचार, नवीन प्रयत्न'
+              : language === 'hi'
+                ? 'नए लोग, नई सोच, नया प्रयास'
+                : 'New People, New Ideas, New Efforts'}
           </p>
+
+          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-90 animate-fade-in"
+            style={{
+              fontFamily: '"Noto Sans Devanagari", "Roboto", sans-serif',
+              lineHeight: '1.8',
+            }}
+          >
+            {language === 'mr'
+              ? 'आता बदलण्याची वेळ — जनतेसह, जनतेसाठी।'
+              : language === 'hi'
+                ? 'अब वक्त है बदलाव का — जनता के साथ, जनता के लिए।'
+                : 'Now is the time for change — with the people, for the people.'}
+          </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
             <Link to="/join">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 shadow-lg">
-                {language === 'mr' ? 'आमच्यासोबत जोडा' : 
-                 language === 'hi' ? 'हमसे जुड़ें' : 'Join Our Movement'} 
+              <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-black shadow-lg border-yellow-600">
+                {language === 'mr' ? 'आमच्यासोबत जोडा' :
+                  language === 'hi' ? 'हमसे जुड़ें' : 'Join Our Movement'}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
             <Link to="/manifesto">
-              <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur border-white text-white hover:bg-white/20">
+              <Button size="lg" variant="outline" className="bg-black/10 backdrop-blur border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black">
                 <BookOpen className="mr-2 h-5 w-5" />
-                {language === 'mr' ? 'मॅनिफेस्टो वाचा' : 
-                 language === 'hi' ? 'मैनिफेस्टो पढ़ें' : 'Read Manifesto'}
+                {language === 'mr' ? 'मॅनिफेस्टो वाचा' :
+                  language === 'hi' ? 'मैनिफेस्टो पढ़ें' : 'Read Manifesto'}
               </Button>
             </Link>
           </div>
         </div>
 
         {/* Floating Political Stats Bar */}
-        <div className="absolute bottom-0 left-0 right-0 bg-white/10 backdrop-blur-md border-t border-white/20">
+        <div className="absolute bottom-0 left-0 right-0 bg-black/80 backdrop-blur-md border-t border-yellow-500/20">
           <div className="container mx-auto px-4 py-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {impactStats.map((stat, index) => (
                 <div key={index} className="text-center text-white">
                   <div className="flex items-center justify-center mb-2">
-                    <stat.icon className="h-5 w-5 mr-2" />
-                    <div className="text-2xl font-bold">{getLocalizedText(stat, 'value')}</div>
+                    <stat.icon className="h-5 w-5 mr-2 text-yellow-400" />
+                    <div className="text-2xl font-bold text-yellow-400">{getLocalizedText(stat, 'value')}</div>
                   </div>
                   <div className="text-sm opacity-80">{getLocalizedText(stat, 'label')}</div>
                 </div>
@@ -536,72 +557,72 @@ const Home = () => {
       </section>
 
       {/* Real-time Political Progress Section */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 to-red-50">
+      <section className="py-16 bg-gradient-to-br from-yellow-50 to-amber-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              {language === 'mr' ? 'राजकीय वाढ ट्रॅकर' : 
-               language === 'hi' ? 'राजनीतिक वृद्धि ट्रैकर' : 'Political Growth Tracker'}
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">
+              {language === 'mr' ? 'राजकीय वाढ ट्रॅकर' :
+                language === 'hi' ? 'राजनीतिक वृद्धि ट्रैकर' : 'Political Growth Tracker'}
             </h2>
-            <p className="text-xl text-muted-foreground">
-              {language === 'mr' ? 'आमच्या राजकीय लक्ष्यांकडे रिअल-टाइम प्रगती' : 
-               language === 'hi' ? 'हमारे राजनीतिक लक्ष्यों की ओर रियल-टाइम प्रगति' : 'Real-time progress towards our political goals'}
+            <p className="text-xl text-gray-700">
+              {language === 'mr' ? 'आमच्या राजकीय लक्ष्यांकडे रिअल-टाइम प्रगती' :
+                language === 'hi' ? 'हमारे राजनीतिक लक्ष्यों की ओर रियल-टाइम प्रगति' : 'Real-time progress towards our political goals'}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <Card className="p-6">
+            <Card className="p-6 border-2 border-yellow-200">
               <CardContent className="p-0">
                 <div className="flex items-center justify-between mb-4">
-                  <Users className="h-8 w-8 text-green-500" />
-                  <span className="text-2xl font-bold">{(realTimeStats.members.current / 1000).toFixed(0)}K</span>
+                  <Users className="h-8 w-8 text-yellow-600" />
+                  <span className="text-2xl font-bold text-black">{(realTimeStats.members.current / 1000).toFixed(0)}K</span>
                 </div>
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
-                    <span>
-                      {language === 'mr' ? 'पक्ष सदस्य' : 
-                       language === 'hi' ? 'पार्टी सदस्य' : 'Party Members'}
+                    <span className="text-black">
+                      {language === 'mr' ? 'पक्ष सदस्य' :
+                        language === 'hi' ? 'पार्टी सदस्य' : 'Party Members'}
                     </span>
-                    <span>{((realTimeStats.members.current / realTimeStats.members.goal) * 100).toFixed(1)}%</span>
+                    <span className="text-black">{((realTimeStats.members.current / realTimeStats.members.goal) * 100).toFixed(1)}%</span>
                   </div>
-                  <Progress value={(realTimeStats.members.current / realTimeStats.members.goal) * 100} className="h-2" />
+                  <Progress value={(realTimeStats.members.current / realTimeStats.members.goal) * 100} className="h-2 bg-yellow-200" />
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="p-6">
+            <Card className="p-6 border-2 border-yellow-200">
               <CardContent className="p-0">
                 <div className="flex items-center justify-between mb-4">
-                  <Users2 className="h-8 w-8 text-blue-500" />
-                  <span className="text-2xl font-bold">{(realTimeStats.volunteers.current / 1000).toFixed(0)}K</span>
+                  <Users2 className="h-8 w-8 text-yellow-600" />
+                  <span className="text-2xl font-bold text-black">{(realTimeStats.volunteers.current / 1000).toFixed(0)}K</span>
                 </div>
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
-                    <span>
-                      {language === 'mr' ? 'सक्रिय स्वयंसेवक' : 
-                       language === 'hi' ? 'सक्रिय स्वयंसेवक' : 'Active Volunteers'}
+                    <span className="text-black">
+                      {language === 'mr' ? 'सक्रिय स्वयंसेवक' :
+                        language === 'hi' ? 'सक्रिय स्वयंसेवक' : 'Active Volunteers'}
                     </span>
-                    <span>{((realTimeStats.volunteers.current / realTimeStats.volunteers.goal) * 100).toFixed(1)}%</span>
+                    <span className="text-black">{((realTimeStats.volunteers.current / realTimeStats.volunteers.goal) * 100).toFixed(1)}%</span>
                   </div>
-                  <Progress value={(realTimeStats.volunteers.current / realTimeStats.volunteers.goal) * 100} className="h-2" />
+                  <Progress value={(realTimeStats.volunteers.current / realTimeStats.volunteers.goal) * 100} className="h-2 bg-yellow-200" />
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="p-6">
+            <Card className="p-6 border-2 border-yellow-200">
               <CardContent className="p-0">
                 <div className="flex items-center justify-between mb-4">
-                  <Megaphone className="h-8 w-8 text-orange-500" />
-                  <span className="text-2xl font-bold">{realTimeStats.campaigns.current}</span>
+                  <Megaphone className="h-8 w-8 text-yellow-600" />
+                  <span className="text-2xl font-bold text-black">{realTimeStats.campaigns.current}</span>
                 </div>
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
-                    <span>
-                      {language === 'mr' ? 'सक्रिय मोहीम' : 
-                       language === 'hi' ? 'सक्रिय अभियान' : 'Active Campaigns'}
+                    <span className="text-black">
+                      {language === 'mr' ? 'सक्रिय मोहीम' :
+                        language === 'hi' ? 'सक्रिय अभियान' : 'Active Campaigns'}
                     </span>
-                    <span>{((realTimeStats.campaigns.current / realTimeStats.campaigns.goal) * 100).toFixed(1)}%</span>
+                    <span className="text-black">{((realTimeStats.campaigns.current / realTimeStats.campaigns.goal) * 100).toFixed(1)}%</span>
                   </div>
-                  <Progress value={(realTimeStats.campaigns.current / realTimeStats.campaigns.goal) * 100} className="h-2" />
+                  <Progress value={(realTimeStats.campaigns.current / realTimeStats.campaigns.goal) * 100} className="h-2 bg-yellow-200" />
                 </div>
               </CardContent>
             </Card>
@@ -613,41 +634,41 @@ const Home = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              {language === 'mr' ? 'ताज्या बातम्या' : 
-               language === 'hi' ? 'ताज़ा खबरें' : 'Latest News'}
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">
+              {language === 'mr' ? 'ताज्या बातम्या' :
+                language === 'hi' ? 'ताज़ा खबरें' : 'Latest News'}
             </h2>
-            <p className="text-xl text-muted-foreground">
-              {language === 'mr' ? 'आमच्या नवीनतम क्रियाकलाप आणि घोषणा' : 
-               language === 'hi' ? 'हमारी नवीनतम गतिविधियाँ और घोषणाएँ' : 'Our latest activities and announcements'}
+            <p className="text-xl text-gray-600">
+              {language === 'mr' ? 'आमच्या नवीनतम क्रियाकलाप आणि घोषणा' :
+                language === 'hi' ? 'हमारी नवीनतम गतिविधियाँ और घोषणाएँ' : 'Our latest activities and announcements'}
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {latestNews.map((news, index) => (
-              <Card key={index} className="hover:shadow-xl transition-all duration-300 group overflow-hidden">
+              <Card key={index} className="hover:shadow-xl transition-all duration-300 group overflow-hidden border-2 border-yellow-100">
                 <div className="h-48 overflow-hidden">
-                  <img 
-                    src={news.image} 
+                  <img
+                    src={news.image}
                     alt={getLocalizedText(news, 'title')}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>
                 <CardContent className="p-6">
-                  <Badge variant="secondary" className="mb-3">
+                  <Badge className="mb-3 bg-yellow-500 text-black border-0">
                     {getLocalizedText(news, 'category')}
                   </Badge>
-                  <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-yellow-600 transition-colors line-clamp-2 text-black">
                     {getLocalizedText(news, 'title')}
                   </h3>
-                  <p className="text-muted-foreground mb-4 line-clamp-3">
+                  <p className="text-gray-600 mb-4 line-clamp-3">
                     {getLocalizedText(news, 'excerpt')}
                   </p>
-                  <div className="flex justify-between items-center text-sm text-muted-foreground">
+                  <div className="flex justify-between items-center text-sm text-gray-500">
                     <span>{new Date(news.date).toLocaleDateString()}</span>
-                    <Link to="/news" className="flex items-center text-primary hover:underline">
-                      {language === 'mr' ? 'अधिक वाचा' : 
-                       language === 'hi' ? 'अधिक पढ़ें' : 'Read More'}
+                    <Link to="/news" className="flex items-center text-yellow-600 hover:underline">
+                      {language === 'mr' ? 'अधिक वाचा' :
+                        language === 'hi' ? 'अधिक पढ़ें' : 'Read More'}
                       <ChevronRight className="h-4 w-4 ml-1" />
                     </Link>
                   </div>
@@ -655,12 +676,12 @@ const Home = () => {
               </Card>
             ))}
           </div>
-          
+
           <div className="text-center mt-12">
             <Link to="/news">
-              <Button variant="outline" size="lg">
-                {language === 'mr' ? 'सर्व बातम्या पहा' : 
-                 language === 'hi' ? 'सभी खबरें देखें' : 'View All News'}
+              <Button variant="outline" size="lg" className="border-yellow-500 text-yellow-600 hover:bg-yellow-500 hover:text-black">
+                {language === 'mr' ? 'सर्व बातम्या पहा' :
+                  language === 'hi' ? 'सभी खबरें देखें' : 'View All News'}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
@@ -669,41 +690,41 @@ const Home = () => {
       </section>
 
       {/* Political Values Section */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              {language === 'mr' ? 'आमची राजकीय मूल्ये' : 
-               language === 'hi' ? 'हमारे राजनीतिक मूल्य' : 'Our Political Values'}
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">
+              {language === 'mr' ? 'आमची राजकीय मूल्ये' :
+                language === 'hi' ? 'हमारे राजनीतिक मूल्य' : 'Our Political Values'}
             </h2>
-            <p className="text-xl text-muted-foreground">
-              {language === 'mr' ? 'आमच्या राजकीय प्रवासाला मार्गदर्शन करणारी मूलभूत तत्त्वे' : 
-               language === 'hi' ? 'हमारे राजनीतिक सफर का मार्गदर्शन करने वाले मूल सिद्धांत' : 'Core principles that guide our political journey'}
+            <p className="text-xl text-gray-600">
+              {language === 'mr' ? 'आमच्या राजकीय प्रवासाला मार्गदर्शन करणारी मूलभूत तत्त्वे' :
+                language === 'hi' ? 'हमारे राजनीतिक सफर का मार्गदर्शन करने वाले मूल सिद्धांत' : 'Core principles that guide our political journey'}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="border-2 hover:shadow-xl transition-all hover:-translate-y-2 group">
+              <Card key={index} className="border-2 border-yellow-200 hover:shadow-xl transition-all hover:-translate-y-2 group bg-white">
                 <CardContent className="p-8">
                   <div className="flex items-center justify-between mb-6">
-                    <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <value.icon className="h-7 w-7 text-primary" />
+                    <div className="h-14 w-14 rounded-full bg-yellow-100 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <value.icon className="h-7 w-7 text-yellow-600" />
                     </div>
-                    <Badge variant="secondary" className="text-sm">
+                    <Badge className="text-sm bg-yellow-500 text-black border-0">
                       {getLocalizedText(value, 'metrics')}
                     </Badge>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4">{getLocalizedText(value, 'title')}</h3>
-                  <p className="text-muted-foreground mb-6">{getLocalizedText(value, 'description')}</p>
+                  <h3 className="text-2xl font-bold mb-4 text-black">{getLocalizedText(value, 'title')}</h3>
+                  <p className="text-gray-600 mb-6">{getLocalizedText(value, 'description')}</p>
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span>
-                        {language === 'mr' ? 'लोकांचा पाठिंबा' : 
-                         language === 'hi' ? 'जनता का समर्थन' : 'Public Support'}
+                      <span className="text-black">
+                        {language === 'mr' ? 'लोकांचा पाठिंबा' :
+                          language === 'hi' ? 'जनता का समर्थन' : 'Public Support'}
                       </span>
-                      <span>{value.progress}%</span>
+                      <span className="text-black">{value.progress}%</span>
                     </div>
-                    <Progress value={value.progress} className="h-2" />
+                    <Progress value={value.progress} className="h-2 bg-yellow-200" />
                   </div>
                 </CardContent>
               </Card>
@@ -713,65 +734,66 @@ const Home = () => {
       </section>
 
       {/* Enhanced Focus Areas for Political Party */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              {language === 'mr' ? 'आमची केंद्रित क्षेत्रे' : 
-               language === 'hi' ? 'हमारे फोकस क्षेत्र' : 'Our Focus Areas'}
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">
+              {language === 'mr' ? 'आमची केंद्रित क्षेत्रे' :
+                language === 'hi' ? 'हमारे फोकस क्षेत्र' : 'Our Focus Areas'}
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              {language === 'mr' 
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              {language === 'mr'
                 ? 'मुख्य क्षेत्र जेथे आम्ही अर्थपूर्ण बदल आणि विकास घडवून आणत आहोत'
                 : language === 'hi'
-                ? 'मुख्य क्षेत्र जहां हम सार्थक बदलाव और विकास ला रहे हैं'
-                : 'Key sectors where we are driving meaningful change and development'
+                  ? 'मुख्य क्षेत्र जहां हम सार्थक बदलाव और विकास ला रहे हैं'
+                  : 'Key sectors where we are driving meaningful change and development'
               }
             </p>
           </div>
-          
+
           <Tabs defaultValue="education" className="max-w-6xl mx-auto">
-            <TabsList className="grid w-full grid-cols-4 mb-8">
+            <TabsList className="grid w-full grid-cols-4 mb-8 bg-yellow-100">
               {focusAreas.map((area, index) => (
-                <TabsTrigger key={index} value={area.title.toLowerCase().replace(/\s+/g, '-')}>
+                <TabsTrigger key={index} value={area.title.toLowerCase().replace(/\s+/g, '-')} 
+                  className="data-[state=active]:bg-yellow-500 data-[state=active]:text-black text-black">
                   <area.icon className="h-4 w-4 mr-2" />
                   {getLocalizedText(area, 'title')}
                 </TabsTrigger>
               ))}
             </TabsList>
-            
+
             {focusAreas.map((area, index) => (
               <TabsContent key={index} value={area.title.toLowerCase().replace(/\s+/g, '-')}>
-                <Card>
+                <Card className="border-2 border-yellow-200">
                   <CardContent className="p-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                       <div>
-                        <h3 className="text-3xl font-bold mb-4">{getLocalizedText(area, 'title')}</h3>
-                        <p className="text-muted-foreground mb-6">{getLocalizedText(area, 'description')}</p>
+                        <h3 className="text-3xl font-bold mb-4 text-black">{getLocalizedText(area, 'title')}</h3>
+                        <p className="text-gray-600 mb-6">{getLocalizedText(area, 'description')}</p>
                         <div className="grid grid-cols-2 gap-4">
                           {Object.entries(area.stats).map(([key, value]) => (
-                            <div key={key} className="text-center p-4 bg-background rounded-lg">
-                              <div className="text-2xl font-bold text-primary mb-1">
+                            <div key={key} className="text-center p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                              <div className="text-2xl font-bold text-yellow-600 mb-1">
                                 {getLocalizedText(area.stats, key)}
                               </div>
-                              <div className="text-sm text-muted-foreground capitalize">
+                              <div className="text-sm text-gray-700 capitalize">
                                 {key === 'successRate' ? (language === 'mr' ? 'यश दर' : language === 'hi' ? 'सफलता दर' : 'Success Rate') :
-                                 key === 'completion' ? (language === 'mr' ? 'पूर्णता' : language === 'hi' ? 'पूर्णता' : 'Completion') :
-                                 key.replace(/([A-Z])/g, ' $1')}
+                                  key === 'completion' ? (language === 'mr' ? 'पूर्णता' : language === 'hi' ? 'पूर्णता' : 'Completion') :
+                                    key.replace(/([A-Z])/g, ' $1')}
                               </div>
                             </div>
                           ))}
                         </div>
                       </div>
                       <div className="flex items-center justify-center">
-                        <div className={`w-48 h-48 rounded-full bg-gradient-to-br ${area.color} flex items-center justify-center text-white`}>
+                        <div className={`w-48 h-48 rounded-full bg-gradient-to-br ${area.color} flex items-center justify-center text-white shadow-lg`}>
                           <div className="text-center">
                             <div className="text-4xl font-bold">
                               {getLocalizedText(area.stats, area.stats.successRate ? 'successRate' : 'completion')}
                             </div>
                             <div className="text-sm">
-                              {language === 'mr' ? 'यश दर' : 
-                               language === 'hi' ? 'सफलता दर' : 'Success Rate'}
+                              {language === 'mr' ? 'यश दर' :
+                                language === 'hi' ? 'सफलता दर' : 'Success Rate'}
                             </div>
                           </div>
                         </div>
@@ -785,19 +807,19 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
             {focusAreas.map((area, index) => (
-              <Card key={index} className="text-center hover:shadow-xl transition-all hover:-translate-y-1">
+              <Card key={index} className="text-center hover:shadow-xl transition-all hover:-translate-y-1 border-2 border-yellow-200">
                 <CardContent className="p-6">
-                  <div className={`h-16 w-16 rounded-full bg-gradient-to-br ${area.color} flex items-center justify-center mx-auto mb-4 text-white`}>
+                  <div className={`h-16 w-16 rounded-full bg-gradient-to-br ${area.color} flex items-center justify-center mx-auto mb-4 text-white shadow-md`}>
                     <area.icon className="h-8 w-8" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{getLocalizedText(area, 'title')}</h3>
-                  <p className="text-muted-foreground text-sm mb-4">{getLocalizedText(area, 'description')}</p>
-                  <div className="text-2xl font-bold text-primary">
+                  <h3 className="text-xl font-bold mb-3 text-black">{getLocalizedText(area, 'title')}</h3>
+                  <p className="text-gray-600 text-sm mb-4">{getLocalizedText(area, 'description')}</p>
+                  <div className="text-2xl font-bold text-yellow-600">
                     {getLocalizedText(area.stats, 'budget')}
                   </div>
-                  <div className="text-xs text-muted-foreground">
-                    {language === 'mr' ? 'वाटप केलेला अर्थसंकल्प' : 
-                     language === 'hi' ? 'आवंटित बजट' : 'Budget Allocated'}
+                  <div className="text-xs text-gray-500">
+                    {language === 'mr' ? 'वाटप केलेला अर्थसंकल्प' :
+                      language === 'hi' ? 'आवंटित बजट' : 'Budget Allocated'}
                   </div>
                 </CardContent>
               </Card>
@@ -807,37 +829,35 @@ const Home = () => {
       </section>
 
       {/* Political Achievements Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-red-50">
+      <section className="py-20 bg-gradient-to-br from-yellow-50 to-amber-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              {language === 'mr' ? 'आमची राजकीय यशगाथा' : 
-               language === 'hi' ? 'हमारी राजनीतिक उपलब्धियाँ' : 'Our Political Achievements'}
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">
+              {language === 'mr' ? 'आमची राजकीय यशगाथा' :
+                language === 'hi' ? 'हमारी राजनीतिक उपलब्धियाँ' : 'Our Political Achievements'}
             </h2>
-            <p className="text-xl text-muted-foreground">
-              {language === 'mr' ? 'जनसेवेच्या आमच्या प्रवासातील टप्पे' : 
-               language === 'hi' ? 'जनसेवा के हमारे सफर में मील के पत्थर' : 'Milestones in our journey of public service'}
+            <p className="text-xl text-gray-700">
+              {language === 'mr' ? 'जनसेवेच्या आमच्या प्रवासातील टप्पे' :
+                language === 'hi' ? 'जनसेवा के हमारे सफर में मील के पत्थर' : 'Milestones in our journey of public service'}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {achievements.map((achievement, index) => (
-              <Card key={index} className="text-center hover:shadow-xl transition-all hover:-translate-y-2">
+              <Card key={index} className="text-center hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-yellow-200 bg-white">
                 <CardContent className="p-8">
                   <div className="relative mb-6">
-                    <div className="h-20 w-20 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center mx-auto">
+                    <div className="h-20 w-20 rounded-full bg-gradient-to-br from-yellow-400 to-amber-600 flex items-center justify-center mx-auto shadow-lg">
                       <achievement.icon className="h-10 w-10 text-white" />
                     </div>
-                    <Badge className={`absolute -top-2 -right-2 ${
-                      achievement.trend === 'up' ? 'bg-green-500' : 'bg-red-500'
-                    }`}>
+                    <Badge className={`absolute -top-2 -right-2 bg-yellow-500 text-black border-0`}>
                       {getLocalizedText(achievement, 'growth')}
                     </Badge>
                   </div>
-                  <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
+                  <div className="text-4xl md:text-5xl font-bold text-yellow-600 mb-2">
                     {getLocalizedText(achievement, 'number')}
                   </div>
-                  <p className="text-lg font-semibold mb-2">{getLocalizedText(achievement, 'title')}</p>
-                  <p className="text-sm text-muted-foreground">{getLocalizedText(achievement, 'description')}</p>
+                  <p className="text-lg font-semibold mb-2 text-black">{getLocalizedText(achievement, 'title')}</p>
+                  <p className="text-sm text-gray-600">{getLocalizedText(achievement, 'description')}</p>
                 </CardContent>
               </Card>
             ))}
@@ -846,50 +866,50 @@ const Home = () => {
       </section>
 
       {/* How to Join Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              {language === 'mr' ? 'आमच्यात सामील कसे व्हावे' : 
-               language === 'hi' ? 'हमसे कैसे जुड़ें' : 'How to Join Us'}
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">
+              {language === 'mr' ? 'आमच्यात सामील कसे व्हावे' :
+                language === 'hi' ? 'हमसे कैसे जुड़ें' : 'How to Join Us'}
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              {language === 'mr' 
-                ? 'जनता बदल चळवळीचा भाग व्हा आणि बदल घडविण्यास मदत करा'
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              {language === 'mr'
+                ? 'जन बदलाव चळवळीचा भाग व्हा आणि बदल घडविण्यास मदत करा'
                 : language === 'hi'
-                ? 'जनता बदलाव आंदोलन का हिस्सा बनें और बदलाव लाने में मदद करें'
-                : 'Become part of Janta Badlaav Movement and help bring change'
+                  ? 'जन बदलाव आंदोलन का हिस्सा बनें और बदलाव लाने में मदद करें'
+                  : 'Become part of Jan Badlaav Movement and help bring change'
               }
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {wayToJoin.map((step, index) => (
-              <Card key={index} className="text-center hover:shadow-xl transition-all group">
+              <Card key={index} className="text-center hover:shadow-xl transition-all group border-2 border-yellow-200 bg-white">
                 <CardContent className="p-8">
                   <div className="relative mb-6">
-                    <div className="h-20 w-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
-                      <step.icon className="h-10 w-10 text-primary" />
+                    <div className="h-20 w-20 rounded-full bg-yellow-100 flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
+                      <step.icon className="h-10 w-10 text-yellow-600" />
                     </div>
-                    <div className="absolute -top-2 -right-2 h-8 w-8 rounded-full bg-primary text-white flex items-center justify-center text-sm font-bold">
+                    <div className="absolute -top-2 -right-2 h-8 w-8 rounded-full bg-yellow-500 text-black flex items-center justify-center text-sm font-bold">
                       {step.step}
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold mb-4">{getLocalizedText(step, 'title')}</h3>
-                  <p className="text-muted-foreground mb-6">{getLocalizedText(step, 'description')}</p>
-                  <Badge variant="secondary">
+                  <h3 className="text-xl font-bold mb-4 text-black">{getLocalizedText(step, 'title')}</h3>
+                  <p className="text-gray-600 mb-6">{getLocalizedText(step, 'description')}</p>
+                  <Badge className="bg-yellow-500 text-black border-0">
                     {getLocalizedText(step, 'duration')}
                   </Badge>
                 </CardContent>
               </Card>
             ))}
           </div>
-          
+
           <div className="text-center mt-12">
             <Link to="/join">
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
-                {language === 'mr' ? 'आत्ताच सामील व्हा' : 
-                 language === 'hi' ? 'अभी जुड़ें' : 'Join Now'}
+              <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-black border-yellow-600">
+                {language === 'mr' ? 'आत्ताच सामील व्हा' :
+                  language === 'hi' ? 'अभी जुड़ें' : 'Join Now'}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
@@ -898,37 +918,37 @@ const Home = () => {
       </section>
 
       {/* Enhanced CTA Section for Political Party */}
-      <section className="py-20 bg-gradient-to-r from-primary to-secondary text-white">
+      <section className="py-20 bg-gradient-to-r from-yellow-500 to-amber-600 text-white">
         <div className="container mx-auto px-4 text-center">
-          <Badge className="mb-4 bg-white/20 text-white border-0">
-            {language === 'mr' ? 'चळवळीत सामील व्हा' : 
-             language === 'hi' ? 'आंदोलन में शामिल हों' : 'Join the Movement'}
+          <Badge className="mb-4 bg-black/20 text-white border-0 backdrop-blur">
+            {language === 'mr' ? 'चळवळीत सामील व्हा' :
+              language === 'hi' ? 'आंदोलन में शामिल हों' : 'Join the Movement'}
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            {language === 'mr' ? 'बदलाचा भाग व्हा' : 
-             language === 'hi' ? 'बदलाव का हिस्सा बनें' : 'Be Part of the Change'}
+            {language === 'mr' ? 'बदलाचा भाग व्हा' :
+              language === 'hi' ? 'बदलाव का हिस्सा बनें' : 'Be Part of the Change'}
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            {language === 'mr' 
+            {language === 'mr'
               ? 'चांगल्या, सशक्त भारतासाठी काम करणाऱ्या हजारो नागरिकांमध्ये सामील व्हा. तुमचा सहभाग फरक करू शकतो.'
               : language === 'hi'
-              ? 'एक बेहतर, मजबूत भारत के लिए काम कर रहे हजारों नागरिकों में शामिल हों। आपकी भागीदारी बदलाव ला सकती है।'
-              : 'Join thousands of citizens working towards a better, stronger India. Your participation can make a difference.'
+                ? 'एक बेहतर, मजबूत भारत के लिए काम कर रहे हजारों नागरिकों में शामिल हों। आपकी भागीदारी बदलाव ला सकती है।'
+                : 'Join thousands of citizens working towards a better, stronger India. Your participation can make a difference.'
             }
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Link to="/join">
-              <Button size="lg" variant="secondary" className="shadow-lg">
-                {language === 'mr' ? 'सदस्य व्हा' : 
-                 language === 'hi' ? 'सदस्य बनें' : 'Become a Member'} 
+              <Button size="lg" variant="secondary" className="bg-black text-white hover:bg-gray-800 shadow-lg border-black">
+                {language === 'mr' ? 'सदस्य व्हा' :
+                  language === 'hi' ? 'सदस्य बनें' : 'Become a Member'}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
             <Link to="/donate">
-              <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur border-white text-white hover:bg-white/20">
-                <DollarSign className="h-4 w-4 mr-2" />
-                {language === 'mr' ? 'कारणासाठी दान करा' : 
-                 language === 'hi' ? 'कारण के लिए दान करें' : 'Donate to Cause'}
+              <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur border-white text-white hover:bg-white hover:text-black">
+                <IndianRupeeIcon className="h-4 w-4 mr-2" />
+                {language === 'mr' ? 'कारणासाठी दान करा' :
+                  language === 'hi' ? 'कारण के लिए दान करें' : 'Donate to Cause'}
               </Button>
             </Link>
           </div>

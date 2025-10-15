@@ -207,7 +207,7 @@ const Founder = () => {
     }
   ];
 
-  const ProgressBar = ({ percentage, color = 'bg-primary' }) => (
+  const ProgressBar = ({ percentage, color = 'bg-yellow-400' }) => (
     <div className="w-full bg-gray-200 rounded-full h-2">
       <div 
         className={`h-2 rounded-full ${color} transition-all duration-1000 ease-out`}
@@ -217,67 +217,79 @@ const Founder = () => {
   );
 
   return (
-    <div className="min-h-screen py-20">
-      <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className={`text-center mb-16 transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            {t('founderTitle')}
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            {language === 'mr' 
-              ? 'जनता बदल चळवळीचे संस्थापक आणि प्रेरणास्थान'
-              : language === 'hi'
-              ? 'जनता बदलाव आंदोलन के संस्थापक और प्रेरणा स्रोत'
-              : 'The Founder and Inspiration behind Janta Badlaav Movement'
-            }
-          </p>
+    <div className="min-h-screen py-24 md:py-28 flex flex-col justify-center overflow-visible bg-white">
+      <div className="container mx-auto px-4 overflow-visible">
+        {/* Header Section */}
+        <div
+          className={`transition-all duration-1000 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          } flex justify-center`}
+          style={{ overflow: 'visible' }}
+        >
+          <div className="text-center mb-16" style={{ overflow: 'visible', lineHeight: '2' }}>
+            <h1
+              className="text-5xl md:text-6xl font-bold mb-6 text-black"
+              style={{
+                fontFamily: '"Noto Sans Devanagari", "Poppins", sans-serif',
+                lineHeight: '1.3',
+                display: 'block',
+                paddingTop: '1.5rem',
+                paddingBottom: '1rem',
+              }}
+            >
+              {t('founderTitle')}
+            </h1>
+
+            <p
+              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              style={{
+                fontFamily: '"Noto Sans Devanagari", "Poppins", sans-serif',
+                lineHeight: '1.8',
+                paddingTop: '0.5rem',
+              }}
+            >
+              {language === 'mr' 
+                ? 'जन बदलाव चळवळीचे संस्थापक आणि प्रेरणास्थान'
+                : language === 'hi'
+                ? 'जन बदलाव आंदोलन के संस्थापक और प्रेरणा स्रोत'
+                : 'The Founder and Inspiration behind Jan Badlaav Movement'}
+            </p>
+          </div>
         </div>
 
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
           {/* Image Section */}
           <div className="relative">
-            <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
-              <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                <div className="text-center text-muted-foreground">
-                  <div className="relative">
-            <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-2 border-yellow-400">
               <img
                 src={founderImage}
                 alt={t('founderName')}
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 h-32 w-32 rounded-full bg-gradient-to-br from-primary to-secondary opacity-20 blur-2xl" />
-          </div>
-                </div>
-              </div>
-            </div>
-            <div className="absolute -bottom-6 -right-6 h-32 w-32 rounded-full bg-gradient-to-br from-primary to-secondary opacity-20 blur-2xl" />
+            <div className="absolute -bottom-6 -right-6 h-32 w-32 rounded-full bg-yellow-400 opacity-20 blur-2xl" />
             
             {/* Quick Stats */}
             <div className="grid grid-cols-3 gap-4 mt-8">
-              <div className="text-center p-4 bg-primary/5 rounded-lg">
-                <Calendar className="h-6 w-6 text-primary mx-auto mb-2" />
-                <div className="text-lg font-bold">{getLocalizedText(founderData, 'age')}</div>
-                <div className="text-sm text-muted-foreground">
+              <div className="text-center p-4 bg-yellow-50 rounded-lg border border-yellow-400">
+                <Calendar className="h-6 w-6 text-black mx-auto mb-2" />
+                <div className="text-lg font-bold text-black">{getLocalizedText(founderData, 'age')}</div>
+                <div className="text-sm text-gray-600">
                   {language === 'mr' ? 'वय' : language === 'hi' ? 'उम्र' : 'Age'}
                 </div>
               </div>
-              <div className="text-center p-4 bg-secondary/5 rounded-lg">
-                <MapPin className="h-6 w-6 text-secondary mx-auto mb-2" />
-                <div className="text-sm font-bold">{getLocalizedText(founderData, 'birthplace')}</div>
-                <div className="text-xs text-muted-foreground">
+              <div className="text-center p-4 bg-yellow-50 rounded-lg border border-yellow-400">
+                <MapPin className="h-6 w-6 text-black mx-auto mb-2" />
+                <div className="text-sm font-bold text-black">{getLocalizedText(founderData, 'birthplace')}</div>
+                <div className="text-xs text-gray-600">
                   {language === 'mr' ? 'जन्मस्थान' : language === 'hi' ? 'जन्मस्थल' : 'Birthplace'}
                 </div>
               </div>
-              <div className="text-center p-4 bg-green-500/5 rounded-lg">
-                <TrendingUp className="h-6 w-6 text-green-500 mx-auto mb-2" />
-                <div className="text-sm font-bold">{getLocalizedText(founderData, 'experience')}</div>
-                <div className="text-xs text-muted-foreground">
+              <div className="text-center p-4 bg-yellow-50 rounded-lg border border-yellow-400">
+                <TrendingUp className="h-6 w-6 text-black mx-auto mb-2" />
+                <div className="text-sm font-bold text-black">{getLocalizedText(founderData, 'experience')}</div>
+                <div className="text-xs text-gray-600">
                   {language === 'mr' ? 'अनुभव' : language === 'hi' ? 'अनुभव' : 'Experience'}
                 </div>
               </div>
@@ -288,21 +300,21 @@ const Founder = () => {
           <div className={`transition-all duration-1000 delay-300 ${
             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
           }`}>
-            <h2 className="text-4xl font-bold mb-4">{getLocalizedText(founderData, 'name')}</h2>
-            <p className="text-xl text-primary font-semibold mb-6">{getLocalizedText(founderData, 'title')}</p>
+            <h2 className="text-4xl font-bold mb-4 text-black">{getLocalizedText(founderData, 'name')}</h2>
+            <p className="text-xl text-yellow-600 font-semibold mb-6">{getLocalizedText(founderData, 'title')}</p>
             
-            <div className="mb-6 p-4 bg-blue-50 rounded-lg">
+            <div className="mb-6 p-4 bg-yellow-50 rounded-lg border border-yellow-400">
               <div className="flex items-center mb-2">
-                <Book className="h-5 w-5 text-blue-500 mr-2" />
-                <span className="font-semibold">
+                <Book className="h-5 w-5 text-black mr-2" />
+                <span className="font-semibold text-black">
                   {language === 'mr' ? 'शिक्षण' : 
                    language === 'hi' ? 'शिक्षा' : 'Education'}
                 </span>
               </div>
-              <p className="text-muted-foreground">{getLocalizedText(founderData, 'education')}</p>
+              <p className="text-gray-700">{getLocalizedText(founderData, 'education')}</p>
             </div>
 
-            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
               {language === 'mr'
                 ? 'यश गौरखेडे हे एक दूरदर्शी नेते, सामाजिक कार्यकर्ते आणि बदलाचे समर्थक आहेत ज्यांनी जनता बदल चळवळीची स्थापना केली. ग्रामीण महाराष्ट्रातील सामान्य कुटुंबात जन्मलेले, त्यांनी लहानपणापासूनच समाजातील आव्हाने जवळून पाहिली आहेत. त्यांच्या १५+ वर्षांच्या सामाजिक सेवेच्या प्रवासाने त्यांना खऱ्या बदलासाठी राजकीय सुधारणेची गरज समजली.'
                 : language === 'hi'
@@ -312,13 +324,13 @@ const Founder = () => {
             </p>
 
             {/* Featured Quote */}
-            <Card className="border-l-4 border-l-primary bg-gradient-to-r from-primary/5 to-transparent">
+            <Card className="border-l-4 border-l-yellow-400 bg-yellow-50 border border-yellow-400">
               <CardContent className="p-6">
-                <Quote className="h-8 w-8 text-primary mb-4" />
-                <p className="text-lg italic text-muted-foreground mb-3">
+                <Quote className="h-8 w-8 text-black mb-4" />
+                <p className="text-lg italic text-gray-700 mb-3">
                   "{getLocalizedText(quotes[0], 'text')}"
                 </p>
-                <p className="text-sm text-primary font-medium">
+                <p className="text-sm text-black font-medium">
                   — {getLocalizedText(quotes[0], 'context')}
                 </p>
               </CardContent>
@@ -328,7 +340,7 @@ const Founder = () => {
 
         {/* Philosophy Section */}
         <section className="mb-20">
-          <h2 className="text-3xl font-bold mb-8 text-center">
+          <h2 className="text-3xl font-bold mb-8 text-center text-black">
             {language === 'mr' ? 'तत्त्वज्ञान आणि मूल्ये' : 
              language === 'hi' ? 'दर्शन और मूल्य' : 'Philosophy & Values'}
           </h2>
@@ -340,15 +352,15 @@ const Founder = () => {
                   isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
                 }`}
               >
-                <Card className="border-2 hover:shadow-lg transition-shadow duration-300 text-center h-full">
+                <Card className="border-2 border-yellow-400 hover:shadow-lg transition-shadow duration-300 text-center h-full bg-white">
                   <CardContent className="p-6">
-                    <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                      <point.icon className="h-7 w-7 text-primary" />
+                    <div className="h-14 w-14 rounded-full bg-yellow-400 flex items-center justify-center mx-auto mb-4">
+                      <point.icon className="h-7 w-7 text-black" />
                     </div>
-                    <h3 className="text-xl font-bold mb-3">
+                    <h3 className="text-xl font-bold mb-3 text-black">
                       {getLocalizedText(point, 'title')}
                     </h3>
-                    <p className="text-muted-foreground text-sm">
+                    <p className="text-gray-600 text-sm">
                       {getLocalizedText(point, 'description')}
                     </p>
                   </CardContent>
@@ -360,14 +372,14 @@ const Founder = () => {
 
         {/* Journey Timeline */}
         <section className="mb-20">
-          <h2 className="text-3xl font-bold mb-12 text-center">
+          <h2 className="text-3xl font-bold mb-12 text-center text-black">
             {language === 'mr' ? 'प्रवास यादी' : 
              language === 'hi' ? 'यात्रा समयरेखा' : 'Journey Timeline'}
           </h2>
           <div className="max-w-4xl mx-auto">
             <div className="relative">
               {/* Timeline line */}
-              <div className="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-1 bg-primary/20 h-full"></div>
+              <div className="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-1 bg-yellow-400 h-full"></div>
               
               <div className="space-y-8">
                 {journey.map((milestone, index) => (
@@ -379,16 +391,16 @@ const Founder = () => {
                   >
                     {/* Content */}
                     <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'} ml-16 md:ml-0`}>
-                      <Card className="border-2 hover:shadow-lg transition-shadow duration-300">
+                      <Card className="border-2 border-yellow-400 hover:shadow-lg transition-shadow duration-300 bg-white">
                         <CardContent className="p-6">
                           <div className="flex items-center mb-3">
-                            <milestone.icon className="h-5 w-5 text-primary mr-2" />
-                            <span className="text-lg font-bold text-primary">{milestone.year}</span>
+                            <milestone.icon className="h-5 w-5 text-black mr-2" />
+                            <span className="text-lg font-bold text-black">{milestone.year}</span>
                           </div>
-                          <h3 className="text-xl font-bold mb-2">
+                          <h3 className="text-xl font-bold mb-2 text-black">
                             {getLocalizedText(milestone, 'title')}
                           </h3>
-                          <p className="text-muted-foreground">
+                          <p className="text-gray-600">
                             {getLocalizedText(milestone, 'description')}
                           </p>
                         </CardContent>
@@ -396,7 +408,7 @@ const Founder = () => {
                     </div>
                     
                     {/* Timeline dot */}
-                    <div className="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-white shadow-lg z-10"></div>
+                    <div className="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-yellow-400 rounded-full border-4 border-white shadow-lg z-10"></div>
                   </div>
                 ))}
               </div>
@@ -406,7 +418,7 @@ const Founder = () => {
 
         {/* Achievements Section */}
         <section className="mb-20">
-          <h2 className="text-3xl font-bold mb-8 text-center">
+          <h2 className="text-3xl font-bold mb-8 text-center text-black">
             {language === 'mr' ? 'पुरस्कार आणि ओळख' : 
              language === 'hi' ? 'पुरस्कार और मान्यता' : 'Awards & Recognition'}
           </h2>
@@ -418,17 +430,17 @@ const Founder = () => {
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
               >
-                <Card className="border-2 hover:shadow-lg transition-shadow duration-300">
+                <Card className="border-2 border-yellow-400 hover:shadow-lg transition-shadow duration-300 bg-white">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <achievement.icon className="h-6 w-6 text-primary" />
+                      <div className="h-12 w-12 rounded-lg bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                        <achievement.icon className="h-6 w-6 text-black" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold mb-2">
+                        <h3 className="text-xl font-bold mb-2 text-black">
                           {getLocalizedText(achievement, 'title')}
                         </h3>
-                        <p className="text-muted-foreground">
+                        <p className="text-gray-600">
                           {getLocalizedText(achievement, 'description')}
                         </p>
                       </div>
@@ -442,7 +454,7 @@ const Founder = () => {
 
         {/* Quotes Carousel */}
         <section className="mb-20">
-          <h2 className="text-3xl font-bold mb-8 text-center">
+          <h2 className="text-3xl font-bold mb-8 text-center text-black">
             {language === 'mr' ? 'प्रेरणादायी विचार' : 
              language === 'hi' ? 'प्रेरणादायक विचार' : 'Inspiring Thoughts'}
           </h2>
@@ -454,14 +466,14 @@ const Founder = () => {
                   isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
                 }`}
               >
-                <Card className="border-2 hover:shadow-lg transition-shadow duration-300 h-full">
+                <Card className="border-2 border-yellow-400 hover:shadow-lg transition-shadow duration-300 h-full bg-white">
                   <CardContent className="p-6">
-                    <Quote className="h-8 w-8 text-primary mb-4" />
-                    <p className="text-muted-foreground italic mb-4">
+                    <Quote className="h-8 w-8 text-black mb-4" />
+                    <p className="text-gray-600 italic mb-4">
                       "{getLocalizedText(quote, 'text')}"
                     </p>
-                    <div className="border-t pt-3">
-                      <p className="text-sm text-primary font-medium">
+                    <div className="border-t border-yellow-400 pt-3">
+                      <p className="text-sm text-black font-medium">
                         {getLocalizedText(quote, 'context')}
                       </p>
                     </div>
@@ -477,7 +489,7 @@ const Founder = () => {
           <div className={`transition-all duration-1000 delay-500 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
-            <Card className="bg-gradient-to-r from-primary to-secondary text-white">
+            <Card className="bg-yellow-400 text-black border-2 border-black">
               <CardContent className="p-8 md:p-12">
                 <div className="text-center mb-8">
                   <h2 className="text-3xl font-bold mb-4">
@@ -515,7 +527,7 @@ const Founder = () => {
                         language === 'hi' ? 'स्थायी विकास' : 'Sustainable Development'
                       ].map((goal, index) => (
                         <li key={index} className="flex items-center">
-                          <Star className="h-4 w-4 text-yellow-300 mr-3" />
+                          <Star className="h-4 w-4 text-black mr-3" />
                           {goal}
                         </li>
                       ))}
@@ -532,21 +544,21 @@ const Founder = () => {
                           <span>{language === 'mr' ? 'लोकांचा विश्वास' : language === 'hi' ? 'लोगों का विश्वास' : 'Public Trust'}</span>
                           <span>85%</span>
                         </div>
-                        <ProgressBar percentage={85} color="bg-green-400" />
+                        <ProgressBar percentage={85} color="bg-black" />
                       </div>
                       <div>
                         <div className="flex justify-between text-sm mb-2">
                           <span>{language === 'mr' ? 'युवा सहभाग' : language === 'hi' ? 'युवा भागीदारी' : 'Youth Engagement'}</span>
                           <span>78%</span>
                         </div>
-                        <ProgressBar percentage={78} color="bg-blue-400" />
+                        <ProgressBar percentage={78} color="bg-black" />
                       </div>
                       <div>
                         <div className="flex justify-between text-sm mb-2">
                           <span>{language === 'mr' ? 'समुदाय प्रभाव' : language === 'hi' ? 'सामुदायिक प्रभाव' : 'Community Impact'}</span>
                           <span>92%</span>
                         </div>
-                        <ProgressBar percentage={92} color="bg-yellow-400" />
+                        <ProgressBar percentage={92} color="bg-black" />
                       </div>
                     </div>
                   </div>

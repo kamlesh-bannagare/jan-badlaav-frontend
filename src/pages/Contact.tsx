@@ -45,14 +45,24 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen py-20">
+    <div className="min-h-screen py-20 bg-white">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+          <h1
+            className="text-5xl md:text-6xl font-bold mb-6 text-black"
+            style={{
+              fontFamily: '"Noto Sans Devanagari", "Poppins", sans-serif',
+              lineHeight: '1.3',
+              display: 'block',
+              paddingTop: '1.5rem',
+              paddingBottom: '0.5rem',
+            }}
+          >
             {t('contactTitle')}
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {t('contactDescription')}
           </p>
         </div>
@@ -61,23 +71,23 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="lg:col-span-1 space-y-6">
             {contactInfo.map((info, index) => (
-              <Card key={index} className="border-2 hover:shadow-lg transition-all">
+              <Card key={index} className="border-2 border-yellow-400 hover:shadow-lg transition-all bg-white">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <info.icon className="h-6 w-6 text-primary" />
+                    <div className="h-12 w-12 rounded-lg bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                      <info.icon className="h-6 w-6 text-black" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-2">{info.title}</h3>
+                      <h3 className="font-semibold mb-2 text-black">{info.title}</h3>
                       {info.href ? (
                         <a
                           href={info.href}
-                          className="text-muted-foreground hover:text-primary transition-colors"
+                          className="text-gray-600 hover:text-yellow-600 transition-colors"
                         >
                           {info.value}
                         </a>
                       ) : (
-                        <p className="text-muted-foreground">{info.value}</p>
+                        <p className="text-gray-600">{info.value}</p>
                       )}
                     </div>
                   </div>
@@ -85,10 +95,10 @@ const Contact = () => {
               </Card>
             ))}
 
-            <Card className="bg-gradient-to-br from-primary/10 to-secondary/10 border-2">
+            <Card className="bg-yellow-400 border-2 border-yellow-400">
               <CardContent className="p-6">
-                <h3 className="font-semibold mb-3">Office Hours</h3>
-                <div className="space-y-2 text-sm text-muted-foreground">
+                <h3 className="font-semibold mb-3 text-black">Office Hours</h3>
+                <div className="space-y-2 text-sm text-black">
                   <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
                   <p>Saturday: 10:00 AM - 4:00 PM</p>
                   <p>Sunday: Closed</p>
@@ -99,63 +109,67 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <Card className="border-2">
+            <Card className="border-2 border-yellow-400 bg-white">
               <CardContent className="p-8">
-                <h2 className="text-2xl font-bold mb-6">Send us a Message</h2>
+                <h2 className="text-2xl font-bold mb-6 text-black">Send us a Message</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <Label htmlFor="contact-name">{t('name')} *</Label>
+                      <Label htmlFor="contact-name" className="text-black">{t('name')} *</Label>
                       <Input
                         id="contact-name"
                         type="text"
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="mt-2"
+                        className="mt-2 border-yellow-400 focus:border-yellow-500"
                         placeholder="Your name"
                       />
                     </div>
 
                     <div>
-                      <Label htmlFor="contact-email">{t('email')} *</Label>
+                      <Label htmlFor="contact-email" className="text-black">{t('email')} *</Label>
                       <Input
                         id="contact-email"
                         type="email"
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="mt-2"
+                        className="mt-2 border-yellow-400 focus:border-yellow-500"
                         placeholder="your.email@example.com"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <Label htmlFor="contact-phone">{t('phone')}</Label>
+                    <Label htmlFor="contact-phone" className="text-black">{t('phone')}</Label>
                     <Input
                       id="contact-phone"
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="mt-2"
+                      className="mt-2 border-yellow-400 focus:border-yellow-500"
                       placeholder="+91 XXXXX XXXXX"
                     />
                   </div>
 
                   <div>
-                    <Label htmlFor="contact-message">{t('message')} *</Label>
+                    <Label htmlFor="contact-message" className="text-black">{t('message')} *</Label>
                     <Textarea
                       id="contact-message"
                       required
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="mt-2 min-h-[150px]"
+                      className="mt-2 min-h-[150px] border-yellow-400 focus:border-yellow-500"
                       placeholder="How can we help you?"
                     />
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full md:w-auto">
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    className="w-full md:w-auto bg-yellow-400 hover:bg-yellow-500 text-black border-2 border-yellow-400"
+                  >
                     <Send className="mr-2 h-5 w-5" />
                     {t('submit')}
                   </Button>

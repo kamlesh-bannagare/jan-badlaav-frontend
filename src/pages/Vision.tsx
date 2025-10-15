@@ -28,7 +28,6 @@ const Vision = () => {
       descriptionHi: 'सतत आर्थिक विकास के लिए रोजगार के अवसर पैदा करना और उद्यमिता का समर्थन करना',
       image: 'https://ibef.org/uploads/blog/1671175917_a06c4bd3cda863ebcc6c.jpg',
       stats: { target: '5M', current: '2.3M', progress: 65 },
-      color: 'from-blue-500 to-cyan-500'
     },
     {
       icon: Lightbulb,
@@ -40,7 +39,6 @@ const Vision = () => {
       descriptionHi: 'पृष्ठभूमि की परवाह किए बिना सभी बच्चों के लिए सुलभ और गुणवत्तापूर्ण शिक्षा सुनिश्चित करना',
       image: 'https://cdndailyexcelsior.b-cdn.net/wp-content/uploads/2023/07/Page6-2-3.jpg',
       stats: { target: '100%', current: '78%', progress: 78 },
-      color: 'from-green-500 to-emerald-500'
     },
     {
       icon: TrendingUp,
@@ -52,7 +50,6 @@ const Vision = () => {
       descriptionHi: 'आधुनिक बुनियादी ढांचे का निर्माण जो ग्रामीण और शहरी क्षेत्रों को सहजता से जोड़े',
       image: 'https://www.azobuild.com/images/Article_Images/ImageForArticle_8709_17316125350945732.jpg',
       stats: { target: '50K', current: '32K', progress: 64 },
-      color: 'from-orange-500 to-red-500'
     },
     {
       icon: Scale,
@@ -64,7 +61,6 @@ const Vision = () => {
       descriptionHi: 'समाज के सभी वर्गों के लिए समान अधिकार और अवसर सुनिश्चित करना',
       image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpJZHVdKEm9k452DQ0JqMCNaKZaB8pyyn56Q&s',
       stats: { target: '100%', current: '85%', progress: 85 },
-      color: 'from-purple-500 to-pink-500'
     },
     {
       icon: Users,
@@ -76,7 +72,6 @@ const Vision = () => {
       descriptionHi: 'सभी नागरिकों के लिए सार्वभौमिक स्वास्थ्य सेवा कवरेज और आधुनिक चिकित्सा सुविधाएं',
       image: 'https://akm-img-a-in.tosshub.com/businesstoday/images/story/202302/226-227-1-sixteen_nine.jpg',
       stats: { target: '95%', current: '70%', progress: 73 },
-      color: 'from-red-500 to-rose-500'
     },
     {
       icon: Building,
@@ -88,7 +83,6 @@ const Vision = () => {
       descriptionHi: 'हरित स्थानों और आधुनिक सुविधाओं वाले स्मार्ट, स्थायी शहरों का विकास',
       image: 'https://imagedelivery.net/WLUarKbmUXuuhDC7PG5_Qw/upload/913d4319970dcefe5bc5fcfebe540ab0.jpeg/public',
       stats: { target: '25', current: '12', progress: 48 },
-      color: 'from-teal-500 to-cyan-500'
     }
   ];
 
@@ -183,18 +177,18 @@ const Vision = () => {
   ];
 
   const progressData = [
-    { category: 'Rural Development', current: 65, target: 100, color: 'bg-blue-500' },
-    { category: 'Women Empowerment', current: 78, target: 100, color: 'bg-pink-500' },
-    { category: 'Youth Employment', current: 58, target: 100, color: 'bg-green-500' },
-    { category: 'Digital Literacy', current: 82, target: 100, color: 'bg-purple-500' },
-    { category: 'Clean Water Access', current: 90, target: 100, color: 'bg-cyan-500' }
+    { category: 'Rural Development', current: 65, target: 100, color: 'bg-yellow-400' },
+    { category: 'Women Empowerment', current: 78, target: 100, color: 'bg-yellow-400' },
+    { category: 'Youth Employment', current: 58, target: 100, color: 'bg-yellow-400' },
+    { category: 'Digital Literacy', current: 82, target: 100, color: 'bg-yellow-400' },
+    { category: 'Clean Water Access', current: 90, target: 100, color: 'bg-yellow-400' }
   ];
 
-  const ProgressBar = ({ percentage, color = 'bg-primary', label, current, target }) => (
+  const ProgressBar = ({ percentage, color = 'bg-yellow-400', label, current, target }) => (
     <div className="mb-4">
       <div className="flex justify-between text-sm mb-2">
-        <span className="font-medium">{label}</span>
-        <span className="text-muted-foreground">{current}% / {target}%</span>
+        <span className="font-medium text-black">{label}</span>
+        <span className="text-gray-600">{current}% / {target}%</span>
       </div>
       <div className="w-full bg-gray-200 rounded-full h-3">
         <div 
@@ -209,15 +203,15 @@ const Vision = () => {
     <div className={`transition-all duration-500 delay-${index * 100} ${
       isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
     }`}>
-      <Card className="border-2 hover:shadow-lg transition-shadow duration-300">
+      <Card className="border-2 border-yellow-400 hover:shadow-lg transition-shadow duration-300 bg-white">
         <CardContent className="p-6 text-center">
-          <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-            <metric.icon className="h-7 w-7 text-primary" />
+          <div className="h-14 w-14 rounded-full bg-yellow-400 flex items-center justify-center mx-auto mb-4">
+            <metric.icon className="h-7 w-7 text-black" />
           </div>
-          <h3 className="text-2xl font-bold text-primary mb-2">{getLocalizedText(metric, 'value')}</h3>
-          <p className="text-muted-foreground font-medium mb-2">{getLocalizedText(metric, 'label')}</p>
-          <div className={`inline-flex items-center px-3 py-1 rounded-full text-sm ${
-            metric.trend === 'up' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+          <h3 className="text-2xl font-bold text-black mb-2">{getLocalizedText(metric, 'value')}</h3>
+          <p className="text-gray-600 font-medium mb-2">{getLocalizedText(metric, 'label')}</p>
+          <div className={`inline-flex items-center px-3 py-1 rounded-full text-sm border border-yellow-400 ${
+            metric.trend === 'up' ? 'bg-yellow-50 text-black' : 'bg-red-100 text-red-800'
           }`}>
             {metric.change} {language === 'mr' ? 'वाढ' : language === 'hi' ? 'वृद्धि' : 'Growth'}
           </div>
@@ -227,28 +221,49 @@ const Vision = () => {
   );
 
   return (
-    <div className="min-h-screen py-20">
-      <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className={`text-center mb-16 transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            {t('visionTitle')}
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            {language === 'mr' 
-              ? 'एक समृद्ध, समावेशक आणि शाश्वत भविष्याची आमची दृष्टी'
-              : language === 'hi'
-              ? 'एक समृद्ध, समावेशी और स्थायी भविष्य के लिए हमारी दृष्टि'
-              : 'Our vision for a prosperous, inclusive, and sustainable future'
-            }
-          </p>
+    <div className="min-h-screen py-24 md:py-28 flex flex-col justify-center overflow-visible bg-white">
+      <div className="container mx-auto px-4 overflow-visible">
+        {/* Header Section */}
+        <div
+          className={`transition-all duration-1000 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          } flex justify-center`}
+          style={{ overflow: 'visible' }}
+        >
+          <div className="text-center mb-16" style={{ overflow: 'visible', lineHeight: '2' }}>
+            <h1
+              className="text-5xl md:text-6xl font-bold mb-6 text-black"
+              style={{
+                fontFamily: '"Noto Sans Devanagari", "Poppins", sans-serif',
+                lineHeight: '1.3',
+                display: 'block',
+                paddingTop: '1.5rem',
+                paddingBottom: '1rem',
+              }}
+            >
+              {t('visionTitle')}
+            </h1>
+
+            <p
+              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              style={{
+                fontFamily: '"Noto Sans Devanagari", "Poppins", sans-serif',
+                lineHeight: '1.8',
+                paddingTop: '0.5rem',
+              }}
+            >
+              {language === 'mr'
+                ? 'एक समृद्ध, समावेशक आणि शाश्वत भविष्याची आमची दृष्टी'
+                : language === 'hi'
+                ? 'एक समृद्ध, समावेशी और स्थायी भविष्य के लिए हमारी दृष्टि'
+                : 'Our vision for a prosperous, inclusive, and sustainable future'}
+            </p>
+          </div>
         </div>
 
         {/* Key Metrics Dashboard */}
         <section className="mb-20">
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-3xl font-bold text-center mb-12 text-black">
             {language === 'mr' ? 'मुख्य मेट्रिक्स' : 
              language === 'hi' ? 'मुख्य मेट्रिक्स' : 'Key Metrics'}
           </h2>
@@ -259,11 +274,11 @@ const Vision = () => {
           </div>
 
           {/* Progress Chart */}
-          <Card className="border-2">
+          <Card className="border-2 border-yellow-400 bg-white">
             <CardContent className="p-6">
               <div className="flex items-center mb-6">
-                <BarChart3 className="h-6 w-6 text-primary mr-2" />
-                <h3 className="text-2xl font-bold">
+                <BarChart3 className="h-6 w-6 text-black mr-2" />
+                <h3 className="text-2xl font-bold text-black">
                   {language === 'mr' ? 'प्रगती तपशील' : 
                    language === 'hi' ? 'प्रगति विवरण' : 'Progress Overview'}
                 </h3>
@@ -281,15 +296,15 @@ const Vision = () => {
                     />
                   ))}
                 </div>
-                <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-lg p-6 flex items-center justify-center">
+                <div className="bg-yellow-50 rounded-lg p-6 flex items-center justify-center border border-yellow-400">
                   <div className="text-center">
-                    <PieChart className="h-16 w-16 text-primary mx-auto mb-4" />
-                    <h4 className="text-lg font-bold mb-2">
+                    <PieChart className="h-16 w-16 text-black mx-auto mb-4" />
+                    <h4 className="text-lg font-bold mb-2 text-black">
                       {language === 'mr' ? 'एकूण प्रगती' : 
                        language === 'hi' ? 'कुल प्रगति' : 'Overall Progress'}
                     </h4>
-                    <div className="text-3xl font-bold text-primary mb-2">74%</div>
-                    <p className="text-muted-foreground">
+                    <div className="text-3xl font-bold text-black mb-2">74%</div>
+                    <p className="text-gray-600">
                       {language === 'mr' ? 'लक्ष्यापर्यंत पोहोचले' : 
                        language === 'hi' ? 'लक्ष्य तक पहुंच गया' : 'Towards Target'}
                     </p>
@@ -305,16 +320,16 @@ const Vision = () => {
           <div className={`transition-all duration-1000 delay-300 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
-            <Card className="bg-gradient-to-r from-primary/5 to-secondary/5 border-2 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full -translate-y-32 translate-x-32"></div>
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-secondary/10 rounded-full translate-y-24 -translate-x-24"></div>
+            <Card className="bg-yellow-50 border-2 border-yellow-400 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-yellow-400 rounded-full -translate-y-32 translate-x-32 opacity-20"></div>
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-yellow-400 rounded-full translate-y-24 -translate-x-24 opacity-20"></div>
               
               <CardContent className="p-8 md:p-12 text-center relative z-10">
-                <h2 className="text-3xl font-bold mb-6">
+                <h2 className="text-3xl font-bold mb-6 text-black">
                   {language === 'mr' ? 'आमचे मिशन' : 
                    language === 'hi' ? 'हमारा मिशन' : 'Our Mission'}
                 </h2>
-                <div className="prose prose-lg max-w-4xl mx-auto text-muted-foreground space-y-4">
+                <div className="prose prose-lg max-w-4xl mx-auto text-gray-700 space-y-4">
                   <p>
                     {language === 'mr'
                       ? 'आमचे मिशन आहे की एक अशा भारताची निर्मिती करणे जिथे प्रत्येक नागरिकाला समान संधी, गुणवत्तापूर्ण शिक्षण, आरोग्यसेवा आणि सन्मानाने जगण्याचा अधिकार असेल. आम्ही पारदर्शक शासन, समावेशक विकास आणि शाश्वत पद्धतींवर विश्वास ठेवतो.'
@@ -339,7 +354,7 @@ const Vision = () => {
 
         {/* Vision Timeline */}
         <section className="mb-20">
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-3xl font-bold text-center mb-12 text-black">
             {language === 'mr' ? 'दृष्टीक्रम रोडमॅप' : 
              language === 'hi' ? 'विजन रोडमैप' : 'Vision Roadmap'}
           </h2>
@@ -351,22 +366,22 @@ const Vision = () => {
                   isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
                 }`}
               >
-                <Card className="border-2 hover:shadow-lg transition-shadow duration-300 h-full">
+                <Card className="border-2 border-yellow-400 hover:shadow-lg transition-shadow duration-300 h-full bg-white">
                   <CardContent className="p-6">
                     <div className="text-center mb-4">
-                      <div className="text-2xl font-bold text-primary mb-2">{milestone.year}</div>
+                      <div className="text-2xl font-bold text-black mb-2">{milestone.year}</div>
                       <div className="w-full bg-gray-200 rounded-full h-2">
                         <div 
-                          className="h-2 rounded-full bg-primary transition-all duration-1000"
+                          className="h-2 rounded-full bg-yellow-400 transition-all duration-1000"
                           style={{ width: `${milestone.progress}%` }}
                         ></div>
                       </div>
-                      <div className="text-sm text-muted-foreground mt-1">{milestone.progress}% Complete</div>
+                      <div className="text-sm text-gray-600 mt-1">{milestone.progress}% Complete</div>
                     </div>
-                    <h3 className="text-xl font-bold mb-3 text-center">
+                    <h3 className="text-xl font-bold mb-3 text-center text-black">
                       {getLocalizedText(milestone, 'title')}
                     </h3>
-                    <p className="text-muted-foreground text-sm text-center">
+                    <p className="text-gray-600 text-sm text-center">
                       {getLocalizedText(milestone, 'description')}
                     </p>
                   </CardContent>
@@ -378,7 +393,7 @@ const Vision = () => {
 
         {/* Vision Points Grid */}
         <section className="mb-20">
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-3xl font-bold text-center mb-12 text-black">
             {language === 'mr' ? 'केंद्रित क्षेत्रे' : 
              language === 'hi' ? 'फोकस क्षेत्र' : 'Focus Areas'}
           </h2>
@@ -390,49 +405,47 @@ const Vision = () => {
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
               >
-                <Card className="border-2 hover:shadow-xl transition-all duration-300 group overflow-hidden">
-                  {/* Image placeholder */}
-                  <div className="h-48 bg-gradient-to-r from-primary/20 to-secondary/20 relative overflow-hidden">
-                    <div className={`absolute inset-0 bg-gradient-to-r ${point.color} opacity-20`}></div>
-                   <div className="h-full flex items-center justify-center">
-  {point?.image ? (
-    <img
-      src={point.image}
-      alt="Point visual"
-      className="max-h-40 w-auto object-contain rounded-lg shadow-md"
-      loading="lazy"
-    />
-  ) : (
-    <div className="text-gray-400 text-sm italic">No image available</div>
-  )}
-</div>
-
+                <Card className="border-2 border-yellow-400 hover:shadow-xl transition-all duration-300 group overflow-hidden bg-white">
+                  {/* Image section */}
+                  <div className="h-48 bg-yellow-50 relative overflow-hidden border-b border-yellow-400">
+                    <div className="h-full flex items-center justify-center">
+                      {point?.image ? (
+                        <img
+                          src={point.image}
+                          alt="Point visual"
+                          className="max-h-40 w-auto object-contain rounded-lg shadow-md"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <div className="text-gray-400 text-sm italic">No image available</div>
+                      )}
+                    </div>
                   </div>
                   
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4 mb-4">
-                      <div className={`h-12 w-12 rounded-lg bg-gradient-to-r ${point.color} flex items-center justify-center flex-shrink-0`}>
-                        <point.icon className="h-6 w-6 text-white" />
+                      <div className="h-12 w-12 rounded-lg bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                        <point.icon className="h-6 w-6 text-black" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                        <h3 className="text-xl font-bold mb-2 text-black group-hover:text-yellow-600 transition-colors">
                           {getLocalizedText(point, 'title')}
                         </h3>
-                        <p className="text-muted-foreground text-sm">
+                        <p className="text-gray-600 text-sm">
                           {getLocalizedText(point, 'description')}
                         </p>
                       </div>
                     </div>
                     
                     {/* Progress Stats */}
-                    <div className="mt-4 p-3 bg-gray-50 rounded-lg">
+                    <div className="mt-4 p-3 bg-yellow-50 rounded-lg border border-yellow-400">
                       <div className="flex justify-between text-sm mb-2">
-                        <span className="font-medium">Progress</span>
-                        <span className="text-primary font-bold">{point.stats.current} / {point.stats.target}</span>
+                        <span className="font-medium text-black">Progress</span>
+                        <span className="text-black font-bold">{point.stats.current} / {point.stats.target}</span>
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-2">
                         <div 
-                          className="h-2 rounded-full bg-gradient-to-r from-primary to-secondary transition-all duration-1000"
+                          className="h-2 rounded-full bg-yellow-400 transition-all duration-1000"
                           style={{ width: `${point.stats.progress}%` }}
                         ></div>
                       </div>
@@ -446,23 +459,23 @@ const Vision = () => {
 
         {/* Values & Impact Section */}
         <section className="mb-20">
-          <Card className="border-2 bg-gradient-to-br from-primary/10 to-secondary/10">
+          <Card className="border-2 border-yellow-400 bg-yellow-50">
             <CardContent className="p-8 md:p-12">
-              <h2 className="text-3xl font-bold mb-8 text-center">
+              <h2 className="text-3xl font-bold mb-8 text-center text-black">
                 {language === 'mr' ? 'आमची मूल्ये आणि प्रभाव' : 
                  language === 'hi' ? 'हमारे मूल्य और प्रभाव' : 'Our Values & Impact'}
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                 <div className="text-center">
-                  <div className="h-16 w-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
-                    <Shield className="h-8 w-8 text-primary" />
+                  <div className="h-16 w-16 rounded-full bg-yellow-400 flex items-center justify-center mx-auto mb-4">
+                    <Shield className="h-8 w-8 text-black" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">
+                  <h3 className="text-xl font-bold mb-3 text-black">
                     {language === 'mr' ? 'पारदर्शकता' : 
                      language === 'hi' ? 'पारदर्शिता' : 'Transparency'}
                   </h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-gray-600">
                     {language === 'mr'
                       ? 'सर्व निर्णय आणि कार्ये पूर्ण पारदर्शकतेने केली जातात'
                       : language === 'hi'
@@ -473,14 +486,14 @@ const Vision = () => {
                 </div>
                 
                 <div className="text-center">
-                  <div className="h-16 w-16 rounded-full bg-secondary/20 flex items-center justify-center mx-auto mb-4">
-                    <Globe className="h-8 w-8 text-secondary" />
+                  <div className="h-16 w-16 rounded-full bg-yellow-400 flex items-center justify-center mx-auto mb-4">
+                    <Globe className="h-8 w-8 text-black" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">
+                  <h3 className="text-xl font-bold mb-3 text-black">
                     {language === 'mr' ? 'समावेशकता' : 
                      language === 'hi' ? 'समावेशिता' : 'Inclusivity'}
                   </h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-gray-600">
                     {language === 'mr'
                       ? 'समाजाच्या सर्व घटकांचा समावेश करणे'
                       : language === 'hi'
@@ -491,14 +504,14 @@ const Vision = () => {
                 </div>
                 
                 <div className="text-center">
-                  <div className="h-16 w-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4">
-                    <TrendingUp className="h-8 w-8 text-green-500" />
+                  <div className="h-16 w-16 rounded-full bg-yellow-400 flex items-center justify-center mx-auto mb-4">
+                    <TrendingUp className="h-8 w-8 text-black" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">
+                  <h3 className="text-xl font-bold mb-3 text-black">
                     {language === 'mr' ? 'शाश्वतता' : 
                      language === 'hi' ? 'स्थिरता' : 'Sustainability'}
                   </h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-gray-600">
                     {language === 'mr'
                       ? 'पुढील पिढ्यांसाठी शाश्वत उपाययोजना'
                       : language === 'hi'
@@ -510,31 +523,31 @@ const Vision = () => {
               </div>
 
               {/* Impact Statistics */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8 pt-8 border-t">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8 pt-8 border-t border-yellow-400">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">500K+</div>
-                  <p className="text-muted-foreground">
+                  <div className="text-3xl font-bold text-black mb-2">500K+</div>
+                  <p className="text-gray-600">
                     {language === 'mr' ? 'लोकांचे जीवन सुधारले' : 
                      language === 'hi' ? 'लोगों के जीवन सुधरे' : 'Lives Improved'}
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-secondary mb-2">1.2M</div>
-                  <p className="text-muted-foreground">
+                  <div className="text-3xl font-bold text-black mb-2">1.2M</div>
+                  <p className="text-gray-600">
                     {language === 'mr' ? 'शैक्षणिक संधी' : 
                      language === 'hi' ? 'शैक्षिक अवसर' : 'Educational Opportunities'}
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">45%</div>
-                  <p className="text-muted-foreground">
+                  <div className="text-3xl font-bold text-black mb-2">45%</div>
+                  <p className="text-gray-600">
                     {language === 'mr' ? 'गरिबीत घट' : 
                      language === 'hi' ? 'गरीबी में कमी' : 'Poverty Reduction'}
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-secondary mb-2">89%</div>
-                  <p className="text-muted-foreground">
+                  <div className="text-3xl font-bold text-black mb-2">89%</div>
+                  <p className="text-gray-600">
                     {language === 'mr' ? 'समाधाने समाधानी' : 
                      language === 'hi' ? 'संतुष्ट हितधारक' : 'Satisfied Stakeholders'}
                   </p>
@@ -549,8 +562,8 @@ const Vision = () => {
           <div className={`text-center transition-all duration-1000 delay-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
-            <Card className="bg-gradient-to-r from-primary to-secondary border-0">
-              <CardContent className="p-8 md:p-12 text-white">
+            <Card className="bg-yellow-400 border-2 border-black">
+              <CardContent className="p-8 md:p-12 text-black">
                 <h2 className="text-3xl font-bold mb-4">
                   {language === 'mr' ? 'सामील व्हा आमच्या चळवळीत' : 
                    language === 'hi' ? 'हमारे आंदोलन में शामिल हों' : 'Join Our Movement'}
@@ -563,7 +576,7 @@ const Vision = () => {
                     : 'Come together for a better future. Your support can make the difference.'
                   }
                 </p>
-                <button className="bg-white text-primary px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors inline-flex items-center gap-2">
+                <button className="bg-black text-yellow-400 px-8 py-3 rounded-lg font-bold hover:bg-gray-800 transition-colors inline-flex items-center gap-2 border-2 border-black">
                   {language === 'mr' ? 'सामील व्हा' : 
                    language === 'hi' ? 'शामिल हों' : 'Get Involved'}
                   <ArrowRight className="h-5 w-5" />

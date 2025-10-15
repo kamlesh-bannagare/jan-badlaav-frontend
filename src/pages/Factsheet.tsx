@@ -20,20 +20,12 @@ import {
   PieChart
 } from "lucide-react";
 
-/**
- * Factsheet.jsx
- * - Improved UI & responsiveness
- * - Kept all original functionality (language support, tabs, data arrays)
- * - Fixes: transition delay handling, icon rendering, responsive images
- */
-
 const Factsheet = () => {
   const { t, language } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState("overview");
 
   useEffect(() => {
-    // reveal animation on mount
     setIsVisible(true);
   }, []);
 
@@ -62,7 +54,7 @@ const Factsheet = () => {
       descriptionMr: "महाराष्ट्र भ्रष्टाचाराच्या प्रकरणांमध्ये अग्रेसर",
       change: "+12%",
       trend: "up",
-      color: "from-red-500 to-orange-500",
+      color: "from-yellow-400 to-yellow-600",
       image:
         "https://www.shutterstock.com/image-vector/illustration-businessman-hands-giving-taking-600nw-2480386373.jpg",
       details: {
@@ -83,7 +75,7 @@ const Factsheet = () => {
       descriptionMr: "गेल्या दशकातील सर्वात जास्त, शिक्षित युवक सर्वात जास्त प्रभावित",
       change: "+4.2%",
       trend: "up",
-      color: "from-orange-500 to-yellow-500",
+      color: "from-yellow-400 to-amber-600",
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcnUiIcSvxnGuT_j4YdH_YxnuWVMHSaf9elA&s",
       details: {
         label: "Jobless Graduates",
@@ -103,7 +95,7 @@ const Factsheet = () => {
       descriptionMr: "ग्रामीण विद्यार्थ्यांना पाचवी नंतर मूलभूत वाचन कौशल्य नाही",
       change: "-8%",
       trend: "down",
-      color: "from-purple-500 to-pink-500",
+      color: "from-yellow-400 to-yellow-500",
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0Yk16ofz_V0dH5DM4r7m1lB_GDyOiupvthQ&s",
       details: {
         label: "School Dropout Rate",
@@ -123,7 +115,7 @@ const Factsheet = () => {
       descriptionMr: "ग्रामीण महाराष्ट्रात डॉक्टर-रुग्ण प्रमाण",
       change: "No Change",
       trend: "neutral",
-      color: "from-green-500 to-teal-500",
+      color: "from-yellow-400 to-amber-500",
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9qjgvizswZoUUmdDStCTusQRXK0OgKCW5cg&s",
       details: {
         label: "Primary Health Centers",
@@ -242,12 +234,11 @@ const Factsheet = () => {
     }
   ];
 
-  // Reusable progress bar component (unchanged functionality)
-  const ProgressBar = ({ percentage, color = "bg-red-500", label, current, target }) => (
+  const ProgressBar = ({ percentage, color = "bg-yellow-400", label, current, target }) => (
     <div className="mb-6">
       <div className="flex justify-between items-center mb-2">
-        <span className="font-semibold text-sm">{label}</span>
-        <span className="text-sm text-muted-foreground">
+        <span className="font-semibold text-sm text-black">{label}</span>
+        <span className="text-sm text-gray-600">
           {current}% / {target}%
         </span>
       </div>
@@ -260,11 +251,6 @@ const Factsheet = () => {
     </div>
   );
 
-  /**
-   * IssueCard
-   * - kept original data usage and fields
-   * - fixed icon rendering and transition delay handling (inline style)
-   */
   const IssueCard = ({ issue, index }) => {
     const Icon = issue.icon || AlertTriangle;
     const transitionDelay = `${index * 100}ms`;
@@ -275,9 +261,9 @@ const Factsheet = () => {
           isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"
         }`}
       >
-        <Card className="overflow-hidden group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-shadow border border-red-100">
-          {/* Gradient top */}
-          <div className={`h-1 w-full bg-gradient-to-r ${issue.color}`} />
+        <Card className="overflow-hidden group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-shadow border-2 border-yellow-400">
+          {/* Yellow top */}
+          <div className={`h-1 w-full bg-yellow-400`} />
 
           <CardContent className="p-0">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
@@ -285,14 +271,14 @@ const Factsheet = () => {
               <div className="md:col-span-1 p-6 flex flex-col justify-between">
                 <div>
                   <div className="flex items-start justify-between mb-4">
-                    <div className="h-12 w-12 rounded-xl bg-gradient-to-r from-red-50 to-orange-50 flex items-center justify-center shadow-sm">
-                      <Icon className="h-6 w-6 text-red-600" />
+                    <div className="h-12 w-12 rounded-xl bg-yellow-400 flex items-center justify-center shadow-sm">
+                      <Icon className="h-6 w-6 text-black" />
                     </div>
 
                     <div
                       className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
                         issue.trend === "up"
-                          ? "bg-red-100 text-red-700"
+                          ? "bg-yellow-100 text-black border border-yellow-400"
                           : issue.trend === "down"
                           ? "bg-green-100 text-green-700"
                           : "bg-gray-100 text-gray-700"
@@ -308,19 +294,19 @@ const Factsheet = () => {
                     </div>
                   </div>
 
-                  <h3 className="text-2xl font-bold text-red-600 mb-1">{issue.value}</h3>
-                  <p className="font-semibold text-lg mb-1">{getLocalizedText(issue, "title")}</p>
-                  <p className="text-sm text-muted-foreground mb-4">{getLocalizedText(issue, "description")}</p>
+                  <h3 className="text-2xl font-bold text-black mb-1">{issue.value}</h3>
+                  <p className="font-semibold text-lg mb-1 text-black">{getLocalizedText(issue, "title")}</p>
+                  <p className="text-sm text-gray-600 mb-4">{getLocalizedText(issue, "description")}</p>
                 </div>
 
-                <div className="bg-red-50 rounded-lg p-3">
-                  <p className="text-sm font-semibold text-red-800">{getLocalizedText(issue.details, "label")}</p>
-                  <p className="text-lg font-bold text-red-600">{getLocalizedText(issue.details, "value")}</p>
+                <div className="bg-yellow-50 rounded-lg p-3 border border-yellow-400">
+                  <p className="text-sm font-semibold text-black">{getLocalizedText(issue.details, "label")}</p>
+                  <p className="text-lg font-bold text-black">{getLocalizedText(issue.details, "value")}</p>
                 </div>
               </div>
 
               {/* image / visual area */}
-              <div className="md:col-span-2 bg-gradient-to-br from-red-50 to-orange-50 flex items-center justify-center border-t md:border-t-0 md:border-l">
+              <div className="md:col-span-2 bg-yellow-50 flex items-center justify-center border-t md:border-t-0 md:border-l border-yellow-400">
                 {issue?.image ? (
                   <div className="w-full h-60 md:h-56 lg:h-64 overflow-hidden">
                     <img
@@ -346,16 +332,16 @@ const Factsheet = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-50/30">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <section className="py-16 px-4 bg-gradient-to-r from-red-600 to-orange-600 text-white">
+      <section className="py-16 px-4 bg-yellow-400 text-black">
         <div className="container mx-auto max-w-6xl text-center">
           <div
             className={`mx-auto max-w-3xl transition-all duration-700 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <AlertTriangle className="h-16 w-16 mx-auto mb-4 text-yellow-300" />
+            <AlertTriangle className="h-16 w-16 mx-auto mb-4 text-black" />
             <h1 className="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">
               {language === "mr"
                 ? "महाराष्ट्र: सध्याचे संकट"
@@ -375,7 +361,7 @@ const Factsheet = () => {
       </section>
 
       {/* Tabs */}
-      <section className="py-6 px-4 bg-white border-b border-red-200">
+      <section className="py-6 px-4 bg-white border-b border-yellow-400">
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-wrap gap-3 justify-center">
             {tabs.map((tab) => (
@@ -383,10 +369,10 @@ const Factsheet = () => {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 aria-pressed={activeTab === tab.id}
-                className={`px-5 py-2 rounded-lg font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
+                className={`px-5 py-2 rounded-lg font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-1 border-2 ${
                   activeTab === tab.id
-                    ? "bg-red-600 text-white shadow-lg"
-                    : "bg-white text-gray-600 hover:bg-red-50 border border-red-100"
+                    ? "bg-yellow-400 text-black shadow-lg border-yellow-400"
+                    : "bg-white text-gray-600 hover:bg-yellow-50 border-yellow-400"
                 }`}
               >
                 {getLocalizedText(tab, "label")}
@@ -402,7 +388,7 @@ const Factsheet = () => {
         {activeTab === "overview" && (
           <div className="space-y-12">
             <section>
-              <h2 className="text-3xl font-bold mb-8 text-red-700 text-center">
+              <h2 className="text-3xl font-bold mb-8 text-black text-center">
                 {language === "mr" ? "महत्वाच्या समस्या" : language === "hi" ? "प्रमुख समस्याएं" : "Critical Issues"}
               </h2>
 
@@ -415,9 +401,9 @@ const Factsheet = () => {
 
             {/* Quick Facts */}
             <section>
-              <Card className="border border-red-200 shadow-lg rounded-2xl overflow-hidden">
-                <CardHeader className="bg-gradient-to-r from-red-50 to-orange-50 border-b border-red-200">
-                  <CardTitle className="text-2xl flex items-center gap-2 text-red-700">
+              <Card className="border-2 border-yellow-400 shadow-lg rounded-2xl overflow-hidden bg-white">
+                <CardHeader className="bg-yellow-400 border-b border-yellow-400">
+                  <CardTitle className="text-2xl flex items-center gap-2 text-black">
                     <AlertTriangle className="h-6 w-6" />
                     {language === "mr" ? "त्वरित तथ्ये" : language === "hi" ? "त्वरित तथ्य" : "Quick Facts"}
                   </CardTitle>
@@ -463,12 +449,12 @@ const Factsheet = () => {
                       return (
                         <div
                           key={idx}
-                          className="text-center p-6 border border-red-100 rounded-xl hover:shadow-md transition-shadow bg-white"
+                          className="text-center p-6 border-2 border-yellow-400 rounded-xl hover:shadow-md transition-shadow bg-white"
                         >
-                          <Icon className="h-12 w-12 text-red-600 mx-auto mb-4" />
-                          <h3 className="text-2xl font-bold text-red-700 mb-2">{fact.value}</h3>
-                          <p className="font-semibold text-red-800 mb-2">{getLocalizedText(fact, "title")}</p>
-                          <p className="text-sm text-muted-foreground">{fact.description}</p>
+                          <Icon className="h-12 w-12 text-black mx-auto mb-4" />
+                          <h3 className="text-2xl font-bold text-black mb-2">{fact.value}</h3>
+                          <p className="font-semibold text-black mb-2">{getLocalizedText(fact, "title")}</p>
+                          <p className="text-sm text-gray-600">{fact.description}</p>
                         </div>
                       );
                     })}
@@ -482,9 +468,9 @@ const Factsheet = () => {
         {/* Corruption */}
         {activeTab === "corruption" && (
           <div className="space-y-8">
-            <Card className="border border-red-200 shadow-lg rounded-2xl overflow-hidden">
-              <CardHeader className="bg-gradient-to-r from-red-50 to-orange-50 border-b border-red-200">
-                <CardTitle className="text-2xl flex items-center gap-2 text-red-700">
+            <Card className="border-2 border-yellow-400 shadow-lg rounded-2xl overflow-hidden bg-white">
+              <CardHeader className="bg-yellow-400 border-b border-yellow-400">
+                <CardTitle className="text-2xl flex items-center gap-2 text-black">
                   <Scale className="h-6 w-6" />
                   {language === "mr" ? "भ्रष्टाचाराचे आकडे" : language === "hi" ? "भ्रष्टाचार के आंकड़े" : "Corruption Statistics"}
                 </CardTitle>
@@ -495,11 +481,11 @@ const Factsheet = () => {
                   {corruptionFacts.map((fact, index) => {
                     const Icon = fact.icon;
                     return (
-                      <div key={index} className="text-center p-6 border border-red-100 rounded-xl bg-white">
-                        <Icon className="h-12 w-12 text-red-600 mx-auto mb-4" />
-                        <h3 className="text-2xl font-bold text-red-700 mb-2">{getLocalizedText(fact, "value")}</h3>
-                        <p className="font-semibold text-red-800 mb-2">{getLocalizedText(fact, "title")}</p>
-                        <p className="text-sm text-muted-foreground">{getLocalizedText(fact, "description")}</p>
+                      <div key={index} className="text-center p-6 border-2 border-yellow-400 rounded-xl bg-white">
+                        <Icon className="h-12 w-12 text-black mx-auto mb-4" />
+                        <h3 className="text-2xl font-bold text-black mb-2">{getLocalizedText(fact, "value")}</h3>
+                        <p className="font-semibold text-black mb-2">{getLocalizedText(fact, "title")}</p>
+                        <p className="text-sm text-gray-600">{getLocalizedText(fact, "description")}</p>
                       </div>
                     );
                   })}
@@ -507,7 +493,7 @@ const Factsheet = () => {
 
                 {/* Major Scams */}
                 <div>
-                  <h4 className="text-xl font-bold mb-6 text-red-700">
+                  <h4 className="text-xl font-bold mb-6 text-black">
                     {language === "mr" ? "मोठे घोटाळे" : language === "hi" ? "बड़े घोटाले" : "Major Scams"}
                   </h4>
 
@@ -538,12 +524,12 @@ const Factsheet = () => {
                         status: "Charges Filed"
                       }
                     ].map((scam, index) => (
-                      <div key={index} className="p-4 border border-red-100 rounded-xl bg-white hover:shadow-md transition-shadow">
+                      <div key={index} className="p-4 border-2 border-yellow-400 rounded-xl bg-white hover:shadow-md transition-shadow">
                         <div className="flex justify-between items-start mb-2">
-                          <h5 className="font-bold text-lg text-red-800">{getLocalizedText(scam, "name")}</h5>
-                          <span className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-semibold">{scam.amount}</span>
+                          <h5 className="font-bold text-lg text-black">{getLocalizedText(scam, "name")}</h5>
+                          <span className="bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-semibold">{scam.amount}</span>
                         </div>
-                        <div className="flex justify-between text-sm text-muted-foreground">
+                        <div className="flex justify-between text-sm text-gray-600">
                           <span>Year: {scam.year}</span>
                           <span>Status: {scam.status}</span>
                         </div>
@@ -559,9 +545,9 @@ const Factsheet = () => {
         {/* Employment */}
         {activeTab === "employment" && (
           <div className="space-y-8">
-            <Card className="border border-orange-200 shadow-lg rounded-2xl overflow-hidden">
-              <CardHeader className="bg-gradient-to-r from-orange-50 to-yellow-50 border-b border-orange-200">
-                <CardTitle className="text-2xl flex items-center gap-2 text-orange-700">
+            <Card className="border-2 border-yellow-400 shadow-lg rounded-2xl overflow-hidden bg-white">
+              <CardHeader className="bg-yellow-400 border-b border-yellow-400">
+                <CardTitle className="text-2xl flex items-center gap-2 text-black">
                   <Briefcase className="h-6 w-6" />
                   {language === "mr" ? "रोजगार संकट" : language === "hi" ? "रोजगार संकट" : "Employment Crisis"}
                 </CardTitle>
@@ -570,18 +556,18 @@ const Factsheet = () => {
               <CardContent className="p-6">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   <div>
-                    <h4 className="text-xl font-bold mb-6 text-orange-700">
+                    <h4 className="text-xl font-bold mb-6 text-black">
                       {language === "mr" ? "बेरोजगारी विभागणी" : language === "hi" ? "बेरोजगारी वितरण" : "Unemployment Distribution"}
                     </h4>
 
                     <div className="space-y-4">
                       {employmentData.map((item, index) => (
-                        <div key={index} className="p-4 border border-orange-100 rounded-xl bg-white">
+                        <div key={index} className="p-4 border-2 border-yellow-400 rounded-xl bg-white">
                           <div className="flex justify-between items-center mb-2">
-                            <h5 className="font-semibold text-orange-800">{getLocalizedText(item, "category")}</h5>
+                            <h5 className="font-semibold text-black">{getLocalizedText(item, "category")}</h5>
                             <span
                               className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                                item.trend === "up" ? "bg-red-100 text-red-800" : "bg-green-100 text-green-800"
+                                item.trend === "up" ? "bg-yellow-400 text-black" : "bg-green-100 text-green-800"
                               }`}
                             >
                               {item.percentage}%
@@ -590,12 +576,12 @@ const Factsheet = () => {
 
                           <div className="w-full bg-gray-200 rounded-full h-3">
                             <div
-                              className={`h-3 rounded-full ${item.trend === "up" ? "bg-red-500" : "bg-green-500"}`}
+                              className={`h-3 rounded-full ${item.trend === "up" ? "bg-yellow-400" : "bg-green-500"}`}
                               style={{ width: `${item.percentage}%` }}
                             />
                           </div>
 
-                          <div className="flex justify-between text-sm text-muted-foreground mt-2">
+                          <div className="flex justify-between text-sm text-gray-600 mt-2">
                             <span>{item.count}</span>
                             <span>{item.trend === "up" ? "Increasing" : "Decreasing"}</span>
                           </div>
@@ -604,8 +590,8 @@ const Factsheet = () => {
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-br from-orange-50 to-yellow-50 rounded-xl p-6">
-                    <h4 className="text-xl font-bold mb-6 text-orange-700">
+                  <div className="bg-yellow-50 rounded-xl p-6 border-2 border-yellow-400">
+                    <h4 className="text-xl font-bold mb-6 text-black">
                       {language === "mr" ? "रोजगार तथ्ये" : language === "hi" ? "रोजगार तथ्य" : "Employment Facts"}
                     </h4>
 
@@ -633,9 +619,9 @@ const Factsheet = () => {
                           trend: "up"
                         }
                       ].map((item, idx) => (
-                        <div key={idx} className="text-center p-4 border border-orange-200 rounded-xl bg-white">
-                          <div className="text-2xl font-bold text-orange-600 mb-2">{item.value}</div>
-                          <p className="text-sm text-orange-800">{getLocalizedText(item, "fact")}</p>
+                        <div key={idx} className="text-center p-4 border-2 border-yellow-400 rounded-xl bg-white">
+                          <div className="text-2xl font-bold text-black mb-2">{item.value}</div>
+                          <p className="text-sm text-black">{getLocalizedText(item, "fact")}</p>
                         </div>
                       ))}
                     </div>
@@ -649,9 +635,9 @@ const Factsheet = () => {
         {/* Development */}
         {activeTab === "development" && (
           <div className="space-y-8">
-            <Card className="border border-purple-200 shadow-lg rounded-2xl overflow-hidden">
-              <CardHeader className="bg-gradient-to-r from-purple-50 to-pink-50 border-b border-purple-200">
-                <CardTitle className="text-2xl flex items-center gap-2 text-purple-700">
+            <Card className="border-2 border-yellow-400 shadow-lg rounded-2xl overflow-hidden bg-white">
+              <CardHeader className="bg-yellow-400 border-b border-yellow-400">
+                <CardTitle className="text-2xl flex items-center gap-2 text-black">
                   <Home className="h-6 w-6" />
                   {language === "mr" ? "विकासातील उणीवा" : language === "hi" ? "विकास में कमियां" : "Development Gaps"}
                 </CardTitle>
@@ -660,11 +646,10 @@ const Factsheet = () => {
               <CardContent className="p-6">
                 <div className="space-y-6">
                   {developmentGaps.map((project, index) => (
-                    <div key={index} className="border border-purple-100 rounded-xl p-6 hover:shadow-md transition-shadow bg-white">
+                    <div key={index} className="border-2 border-yellow-400 rounded-xl p-6 hover:shadow-md transition-shadow bg-white">
                       <div className="flex flex-col md:flex-row gap-6">
                         <div className="md:w-1/4">
-                          <div className="h-32 bg-gradient-to-br from-purple-100 to-pink-100 rounded-lg flex items-center justify-center overflow-hidden">
-                            {/* keep visual small and responsive */}
+                          <div className="h-32 bg-yellow-50 rounded-lg flex items-center justify-center overflow-hidden border-2 border-yellow-400">
                             <img
                               src={project.image}
                               alt={getLocalizedText(project, "area") || "project image"}
@@ -679,24 +664,24 @@ const Factsheet = () => {
                         </div>
 
                         <div className="md:w-3/4">
-                          <h4 className="text-xl font-bold text-purple-800 mb-4">{getLocalizedText(project, "area")}</h4>
+                          <h4 className="text-xl font-bold text-black mb-4">{getLocalizedText(project, "area")}</h4>
 
                           <ProgressBar
                             percentage={project.completed}
-                            color="bg-purple-500"
+                            color="bg-yellow-400"
                             label={`${getLocalizedText(project, "area")} - ${project.delay} ${language === "mr" ? "विलंब" : language === "hi" ? "विलंब" : "delay"}`}
                             current={project.completed}
                             target={project.target}
                           />
 
                           <div className="grid grid-cols-2 gap-4 text-sm mt-3">
-                            <div className="text-center p-3 bg-purple-50 rounded-lg">
-                              <div className="text-lg font-bold text-purple-600">{project.completed}%</div>
-                              <div className="text-purple-800">{language === "mr" ? "पूर्ण" : language === "hi" ? "पूर्ण" : "Completed"}</div>
+                            <div className="text-center p-3 bg-yellow-50 rounded-lg border border-yellow-400">
+                              <div className="text-lg font-bold text-black">{project.completed}%</div>
+                              <div className="text-black">{language === "mr" ? "पूर्ण" : language === "hi" ? "पूर्ण" : "Completed"}</div>
                             </div>
-                            <div className="text-center p-3 bg-red-50 rounded-lg">
-                              <div className="text-lg font-bold text-red-600">{project.delay}</div>
-                              <div className="text-red-800">{language === "mr" ? "विलंब" : language === "hi" ? "विलंब" : "Delay"}</div>
+                            <div className="text-center p-3 bg-yellow-100 rounded-lg border border-yellow-400">
+                              <div className="text-lg font-bold text-black">{project.delay}</div>
+                              <div className="text-black">{language === "mr" ? "विलंब" : language === "hi" ? "विलंब" : "Delay"}</div>
                             </div>
                           </div>
                         </div>
@@ -711,9 +696,9 @@ const Factsheet = () => {
 
         {/* Call to action */}
         <section className="mt-16">
-          <Card className="bg-gradient-to-r from-red-600 to-orange-600 text-white border-0 shadow-2xl rounded-2xl">
+          <Card className="bg-yellow-400 text-black border-2 border-yellow-400 shadow-2xl rounded-2xl">
             <CardContent className="p-12 text-center">
-              <AlertTriangle className="h-16 w-16 mx-auto mb-4 text-yellow-300" />
+              <AlertTriangle className="h-16 w-16 mx-auto mb-4 text-black" />
               <h2 className="text-3xl font-bold mb-4">
                 {language === "mr" ? "वेळ आली आहे बदलाची!" : language === "hi" ? "बदल का समय आ गया है!" : "Time for Change Has Come!"}
               </h2>
@@ -726,10 +711,10 @@ const Factsheet = () => {
               </p>
 
               <div className="flex flex-wrap justify-center gap-6 mt-8">
-                <button className="bg-white text-red-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors text-lg">
+                <button className="bg-black text-yellow-400 px-8 py-3 rounded-lg font-bold hover:bg-gray-800 transition-colors text-lg border-2 border-black">
                   {language === "mr" ? "आमच्यासोबत जोडा" : language === "hi" ? "हमसे जुड़ें" : "Join With Us"}
                 </button>
-                <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white/10 transition-colors text-lg">
+                <button className="border-2 border-black text-black px-8 py-3 rounded-lg font-bold hover:bg-black hover:text-yellow-400 transition-colors text-lg">
                   {language === "mr" ? "अधिक माहिती" : language === "hi" ? "अधिक जानकारी" : "Learn More"}
                 </button>
               </div>

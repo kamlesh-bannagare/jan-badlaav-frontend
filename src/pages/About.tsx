@@ -268,21 +268,38 @@ const About = () => {
   }, []);
 
   return (
-    <div className="min-h-screen py-20">
-      <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className={`text-center mb-16 transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            {t('aboutTitle')}
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            {t('aboutDescription')}
-          </p>
+    <div className="min-h-screen py-24 md:py-28 flex flex-col justify-center overflow-visible bg-white">
+      <div className="container mx-auto px-4 overflow-visible">
+        {/* Hero Section with Yellow Background */}
+        <div
+          className={`transition-all duration-1000 mb-16 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
+          <div className="bg-yellow-500 rounded-2xl p-8 md:p-12 text-center">
+            <h1
+              className="text-5xl md:text-6xl font-bold mb-6 text-black"
+              style={{
+                fontFamily: '"Noto Sans Devanagari", "Poppins", sans-serif',
+                lineHeight: '1.3',
+              }}
+            >
+              {t('aboutTitle')}
+            </h1>
+
+            <p
+              className="text-xl text-black max-w-3xl mx-auto opacity-90"
+              style={{
+                fontFamily: '"Noto Sans Devanagari", "Poppins", sans-serif',
+                lineHeight: '1.8',
+              }}
+            >
+              {t('aboutDescription')}
+            </p>
+          </div>
         </div>
 
-        {/* Achievements Counter */}
+        {/* Achievements Counter - Yellow Background */}
         <section className="mb-20">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {achievements.map((achievement, index) => (
@@ -292,15 +309,15 @@ const About = () => {
                   isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
                 }`}
               >
-                <Card className="text-center border-2 hover:shadow-lg transition-shadow duration-300">
+                <Card className="text-center border-2 border-black bg-yellow-500 hover:shadow-lg transition-shadow duration-300">
                   <CardContent className="p-6">
-                    <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 transition-colors duration-300 hover:bg-primary/20">
-                      <achievement.icon className="h-8 w-8 text-primary" />
+                    <div className="h-16 w-16 rounded-full bg-black flex items-center justify-center mx-auto mb-4 transition-colors duration-300">
+                      <achievement.icon className="h-8 w-8 text-yellow-500" />
                     </div>
-                    <h3 className="text-3xl font-bold text-primary mb-2">
+                    <h3 className="text-3xl font-bold text-black mb-2">
                       {getLocalizedText(achievement, 'metric')}
                     </h3>
-                    <p className="text-muted-foreground font-medium">
+                    <p className="text-black font-medium">
                       {getLocalizedText(achievement, 'label')}
                     </p>
                   </CardContent>
@@ -310,18 +327,18 @@ const About = () => {
           </div>
         </section>
 
-        {/* Story Section */}
+        {/* Story Section - White Background */}
         <section className="mb-20">
           <div className={`transition-all duration-1000 delay-300 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
-            <Card className="overflow-hidden border-2 hover:shadow-lg transition-shadow duration-300">
+            <Card className="overflow-hidden border-2 border-black bg-white hover:shadow-lg transition-shadow duration-300">
               <CardContent className="p-8 md:p-12">
-                <h2 className="text-3xl font-bold mb-6">
+                <h2 className="text-3xl font-bold mb-6 text-black">
                   {language === 'mr' ? 'आमची कहाणी' : 
                    language === 'hi' ? 'हमारी कहानी' : 'Our Story'}
                 </h2>
-                <div className="prose prose-lg max-w-none text-muted-foreground space-y-4">
+                <div className="prose prose-lg max-w-none text-black space-y-4">
                   <p>
                     {language === 'mr' 
                       ? 'जनता बदलाचा जन्म राजकीय परिदृश्य बदलण्याच्या दृष्टिकोनातून झाला आणि सामान्य लोकांच्या आकांक्षांचे खरे प्रतिनिधित्व करणारी चळवळ तयार केली. यश गौरखेडे यांनी २०१३ मध्ये स्थापन केलेली ही चळवळ सामाजिक न्याय, समानता आणि शाश्वत विकास या तत्त्वांवर बांधली गेली आहे.'
@@ -352,14 +369,14 @@ const About = () => {
           </div>
         </section>
 
-        {/* Journey Timeline */}
+        {/* Journey Timeline - Black Background */}
         <section className="mb-20">
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-3xl font-bold text-center mb-12 text-black">
             {language === 'mr' ? 'आमचा प्रवास' : 
              language === 'hi' ? 'हमारी यात्रा' : 'Our Journey'}
           </h2>
           <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-primary/20 h-full"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-yellow-500 h-full"></div>
             
             <div className="space-y-12">
               {journey.map((milestone, index) => (
@@ -374,23 +391,23 @@ const About = () => {
                   style={{ transitionDelay: `${500 + index * 200}ms` }}
                 >
                   <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
-                    <Card className="border-2 hover:shadow-lg transition-shadow duration-300">
+                    <Card className="border-2 border-black bg-black hover:shadow-lg transition-shadow duration-300">
                       <CardContent className="p-6">
                         <div className="flex items-center mb-3">
-                          <Calendar className="h-5 w-5 text-primary mr-2" />
-                          <span className="text-lg font-bold text-primary">{milestone.year}</span>
+                          <Calendar className="h-5 w-5 text-yellow-500 mr-2" />
+                          <span className="text-lg font-bold text-yellow-500">{milestone.year}</span>
                         </div>
-                        <h3 className="text-xl font-bold mb-2">
+                        <h3 className="text-xl font-bold mb-2 text-yellow-500">
                           {getLocalizedText(milestone, 'title')}
                         </h3>
-                        <p className="text-muted-foreground mb-3">
+                        <p className="text-yellow-400 mb-3">
                           {getLocalizedText(milestone, 'description')}
                         </p>
                         <div className="flex gap-4 text-sm mt-4">
-                          <span className="bg-primary/10 px-3 py-1 rounded">
+                          <span className="bg-yellow-500 text-black px-3 py-1 rounded border border-yellow-500">
                             {getLocalizedText(milestone.stats, 'members')} {language === 'mr' ? 'सदस्य' : language === 'hi' ? 'सदस्य' : 'Members'}
                           </span>
-                          <span className="bg-secondary/10 px-3 py-1 rounded">
+                          <span className="bg-yellow-500 text-black px-3 py-1 rounded border border-yellow-500">
                             {getLocalizedText(milestone.stats, 'districts')} {language === 'mr' ? 'जिल्हे' : language === 'hi' ? 'जिले' : 'Districts'}
                           </span>
                         </div>
@@ -398,16 +415,16 @@ const About = () => {
                     </Card>
                   </div>
                   
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-white shadow-lg"></div>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-yellow-500 rounded-full border-4 border-white shadow-lg"></div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Leadership Team */}
+        {/* Leadership Team - Yellow Background */}
         <section className="mb-20">
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-3xl font-bold text-center mb-12 text-black">
             {language === 'mr' ? 'आमचे नेतृत्व' : 
              language === 'hi' ? 'हमारी नेतृत्व टीम' : 'Our Leadership'}
           </h2>
@@ -419,20 +436,20 @@ const About = () => {
                   isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
                 }`}
               >
-                <Card className="border-2 hover:shadow-lg transition-shadow duration-300 text-center">
+                <Card className="border-2 border-black bg-yellow-500 hover:shadow-lg transition-shadow duration-300 text-center">
                   <CardContent className="p-6">
-                    <div className="h-32 w-32 mx-auto mb-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full flex items-center justify-center transition-colors duration-300 hover:from-primary/30 hover:to-secondary/30">
-                      <span className="text-muted-foreground text-sm text-center">
+                    <div className="h-32 w-32 mx-auto mb-4 bg-black rounded-full flex items-center justify-center transition-colors duration-300 border-2 border-black">
+                      <span className="text-yellow-500 text-sm text-center">
                         {language === 'mr' ? 'प्रतिमा' : language === 'hi' ? 'छवि' : 'Image'}: {leader.image}
                       </span>
                     </div>
-                    <h3 className="text-xl font-bold mb-2">
+                    <h3 className="text-xl font-bold mb-2 text-black">
                       {getLocalizedText(leader, 'name')}
                     </h3>
-                    <p className="text-primary font-medium mb-2">
+                    <p className="text-black font-medium mb-2">
                       {getLocalizedText(leader, 'role')}
                     </p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-black">
                       {getLocalizedText(leader, 'description')}
                     </p>
                   </CardContent>
@@ -442,9 +459,9 @@ const About = () => {
           </div>
         </section>
 
-        {/* Principles Grid */}
+        {/* Principles Grid - White Background */}
         <section className="mb-20">
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-3xl font-bold text-center mb-12 text-black">
             {language === 'mr' ? 'आमची तत्त्वे' : 
              language === 'hi' ? 'हमारे सिद्धांत' : 'Our Principles'}
           </h2>
@@ -456,15 +473,15 @@ const About = () => {
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
               >
-                <Card className="border-2 hover:shadow-lg transition-shadow duration-300">
+                <Card className="border-2 border-black bg-white hover:shadow-lg transition-shadow duration-300">
                   <CardContent className="p-6 text-center">
-                    <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 transition-colors duration-300 hover:bg-primary/20">
-                      <principle.icon className="h-8 w-8 text-primary" />
+                    <div className="h-16 w-16 rounded-full bg-yellow-500 flex items-center justify-center mx-auto mb-4 transition-colors duration-300">
+                      <principle.icon className="h-8 w-8 text-black" />
                     </div>
-                    <h3 className="text-xl font-bold mb-3">
+                    <h3 className="text-xl font-bold mb-3 text-black">
                       {getLocalizedText(principle, 'title')}
                     </h3>
-                    <p className="text-muted-foreground text-sm">
+                    <p className="text-black text-sm">
                       {getLocalizedText(principle, 'description')}
                     </p>
                   </CardContent>
@@ -474,18 +491,18 @@ const About = () => {
           </div>
         </section>
 
-        {/* Future Vision */}
+        {/* Future Vision - Yellow Background */}
         <section>
           <div className={`transition-all duration-1000 delay-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
-            <Card className="bg-gradient-to-r from-primary/10 to-secondary/10 border-0">
+            <Card className="bg-yellow-500 border-2 border-black">
               <CardContent className="p-8 md:p-12 text-center">
-                <h2 className="text-3xl font-bold mb-6">
+                <h2 className="text-3xl font-bold mb-6 text-black">
                   {language === 'mr' ? 'पुढचे ध्येय' : 
                    language === 'hi' ? 'आगे का लक्ष्य' : 'Looking Ahead'}
                 </h2>
-                <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+                <p className="text-xl text-black max-w-3xl mx-auto mb-8">
                   {language === 'mr'
                     ? 'पुढे जाताना, आमची वचनबद्धता कधीही त्यापेक्षा जास्त मजबूत आहे. तुमच्या पाठिंब्यामुळे, आमचा उद्देश देशाच्या प्रत्येक कोपऱ्यात पोहोचण्याचा आहे, सर्व समुदायांमध्ये सकारात्मक बदल आणि समावेशक विकास आणण्याचा आहे.'
                     : language === 'hi'
@@ -497,12 +514,12 @@ const About = () => {
                   {futureGoals.map((goal, index) => (
                     <div
                       key={index}
-                      className="bg-white/80 rounded-lg px-6 py-4 shadow-lg transition-shadow duration-300 hover:shadow-xl min-w-[200px]"
+                      className="bg-black rounded-lg px-6 py-4 shadow-lg transition-shadow duration-300 hover:shadow-xl min-w-[200px] border-2 border-black"
                     >
-                      <h4 className="font-bold text-primary mb-2">
+                      <h4 className="font-bold text-yellow-500 mb-2">
                         {getLocalizedText(goal, 'title')}
                       </h4>
-                      <p className="text-sm">
+                      <p className="text-sm text-yellow-500">
                         {getLocalizedText(goal, 'subtitle')}
                       </p>
                     </div>
