@@ -258,7 +258,7 @@ const Footer = () => {
                 <select
                   id="footer-lang"
                   value={language}
-                  onChange={(e) => setLanguage(e.target.value)}
+                  onChange={(e) => setLanguage(e.target.value as 'mr' | 'en' | 'hi')}
                   className="text-sm rounded-md px-2 py-1 border border-border bg-transparent"
                 >
                   {languages.map((l) => (

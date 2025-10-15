@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Noto Sans Devanagari', 'Inter', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
