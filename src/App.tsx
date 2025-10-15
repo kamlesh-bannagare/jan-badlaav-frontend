@@ -23,7 +23,7 @@ import TermsConditions from "./pages/TermsConditions";
 import RefundPolicy from "./pages/RefundPolicy";
 import NotFound from "./pages/NotFound";
 
-// Replace this with your actual logo
+// Replace with your logo
 import Logo from "./assets/logo.jpg"; 
 
 const queryClient = new QueryClient();
@@ -38,20 +38,26 @@ const ScrollToTop = () => {
 };
 
 const App = () => {
-  // Loader state
   const [loading, setLoading] = useState(true);
+  const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-    // Simulate initial loading (replace with actual loading logic if needed)
-    const timer = setTimeout(() => setLoading(false), 1000); // 1 sec loader
+    // Simulate loading
+    const timer = setTimeout(() => {
+      setFadeOut(true);
+      setTimeout(() => setLoading(false), 500); // match fade-out duration
+    }, 1000); // 1 second loader
     return () => clearTimeout(timer);
   }, []);
 
   if (loading) {
-    // Full-screen loader
     return (
-      <div className="fixed inset-0 flex items-center justify-center bg-white z-50">
-        <img src={Logo} alt="Logo" className="w-32 h-32 animate-pulse" />
+      <div className={`fixed inset-0 flex items-center justify-center bg-white z-50 ${fadeOut ? 'animate-fade-out' : ''}`}>
+        <img
+          src={Logo}
+          alt="Logo"
+          className="w-56 h-56 animate-zoom-in-out"
+        />
       </div>
     );
   }
