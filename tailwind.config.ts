@@ -14,7 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Noto Sans Devanagari', 'Inter', 'sans-serif'],
+        sans: ['Noto Sans Devanagari', 'sans-serif'],
+        heading: ['Poppins', 'Noto Sans Devanagari', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
