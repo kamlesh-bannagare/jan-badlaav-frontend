@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import { motion } from "framer-motion";
+
 import {
   ArrowRight, Users, Target, Heart, BookOpen, Handshake, Award,
   TrendingUp, MessageSquare, CheckCircle2, Building2, GraduationCap,
@@ -528,13 +530,6 @@ const Home = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <Link to="/manifesto">
-              <Button size="lg" variant="outline" className="bg-black/10 backdrop-blur border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black">
-                <BookOpen className="mr-2 h-5 w-5" />
-                {language === 'mr' ? 'मॅनिफेस्टो वाचा' :
-                  language === 'hi' ? 'मैनिफेस्टो पढ़ें' : 'Read Manifesto'}
-              </Button>
-            </Link>
           </div>
         </div>
 
@@ -865,8 +860,138 @@ const Home = () => {
         </div>
       </section>
 
-      {/* How to Join Section */}
+      {/* Upcoming Events Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">
+              {language === 'mr' ? 'आगामी कार्यक्रम' :
+                language === 'hi' ? 'आगामी कार्यक्रम' : 'Upcoming Events'}
+            </h2>
+            <p className="text-xl text-gray-600">
+              {language === 'mr' ? 'आमच्या पुढील राजकीय कार्यक्रम आणि रॅल्या' :
+                language === 'hi' ? 'हमारे आगामी राजनीतिक कार्यक्रम और रैलियाँ' : 'Our upcoming political events and rallies'}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {upcomingEvents.map((event, index) => (
+              <Card key={index} className="hover:shadow-xl transition-all duration-300 group border-2 border-yellow-200">
+                <CardContent className="p-6">
+                  <Badge className="mb-4 bg-yellow-500 text-black border-0">
+                    {getLocalizedText(event, 'type')}
+                  </Badge>
+                  <h3 className="text-xl font-bold mb-3 text-black group-hover:text-yellow-600 transition-colors">
+                    {getLocalizedText(event, 'title')}
+                  </h3>
+                  <div className="space-y-3 mb-4">
+                    <div className="flex items-center text-sm text-gray-600">
+                      <Calendar className="h-4 w-4 mr-2 text-yellow-600" />
+                      {new Date(event.date).toLocaleDateString()}
+                    </div>
+                    <div className="flex items-center text-sm text-gray-600">
+                      <MapPin className="h-4 w-4 mr-2 text-yellow-600" />
+                      {getLocalizedText(event, 'location')}
+                    </div>
+                    <div className="flex items-center text-sm text-gray-600">
+                      <Users className="h-4 w-4 mr-2 text-yellow-600" />
+                      {event.attendees.toLocaleString()}+ {language === 'mr' ? 'सहभागी' : language === 'hi' ? 'प्रतिभागी' : 'Attendees'}
+                    </div>
+                  </div>
+                  <Button className="w-full bg-yellow-500 hover:bg-yellow-600 text-black">
+                    {language === 'mr' ? 'सहभागी व्हा' :
+                      language === 'hi' ? 'भाग लें' : 'Participate'}
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Party Presence Map Section */}
       <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">
+              {language === 'mr' ? 'देशव्यापी उपस्थिती' :
+                language === 'hi' ? 'देशव्यापी उपस्थिति' : 'Nationwide Presence'}
+            </h2>
+            <p className="text-xl text-gray-600">
+              {language === 'mr' ? 'संपूर्ण भारतात आमची राजकीय उपस्थिती' :
+                language === 'hi' ? 'पूरे भारत में हमारी राजनीतिक उपस्थिति' : 'Our political presence across India'}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <div className="flex items-center justify-center">
+              <div className="relative w-full max-w-md">
+                <img
+                  src={indiaMap}
+                  alt="India Map"
+                  className="w-full h-auto opacity-80"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-6xl font-bold text-yellow-600 mb-2">12</div>
+                    <div className="text-xl text-black font-semibold">
+                      {language === 'mr' ? 'राज्ये' :
+                        language === 'hi' ? 'राज्य' : 'States'}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-2xl font-bold mb-4 text-black">
+                  {language === 'mr' ? 'मजबूत पाया' :
+                    language === 'hi' ? 'मजबूत आधार' : 'Strong Hold'}
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {partyPresence.strongHold.map((state, index) => (
+                    <Badge key={index} className="bg-yellow-500 text-black border-0">
+                      {state}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold mb-4 text-black">
+                  {language === 'mr' ? 'वाढत्या प्रभाव' :
+                    language === 'hi' ? 'बढ़ता प्रभाव' : 'Growing Influence'}
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {partyPresence.growing.map((state, index) => (
+                    <Badge key={index} variant="outline" className="border-yellow-500 text-yellow-600">
+                      {state}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold mb-4 text-black">
+                  {language === 'mr' ? 'उदयोन्मुख उपस्थिती' :
+                    language === 'hi' ? 'उभरती उपस्थिति' : 'Emerging Presence'}
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {partyPresence.emerging.map((state, index) => (
+                    <Badge key={index} variant="secondary" className="bg-gray-200 text-gray-700">
+                      {state}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How to Join Section */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">
@@ -913,6 +1038,48 @@ const Home = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Media Section */}
+      <section className="py-20 bg-gradient-to-br from-yellow-50 to-amber-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">
+              {language === 'mr' ? 'सोशल मीडियावर जोडले रहा' :
+                language === 'hi' ? 'सोशल मीडिया पर जुड़े रहें' : 'Stay Connected on Social Media'}
+            </h2>
+            <p className="text-xl text-gray-700">
+              {language === 'mr' ? 'आमच्या नवीनतम अपडेट्ससाठी अनुसरण करा' :
+                language === 'hi' ? 'हमारे नवीनतम अपडेट्स के लिए फॉलो करें' : 'Follow us for latest updates'}
+            </p>
+          </div>
+
+          <div className="flex justify-center gap-6 mb-12">
+            {socialMedia.map((social, index) => (
+              <motion.a
+                key={index}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-16 w-16 rounded-full bg-white border-2 border-yellow-200 flex items-center justify-center hover:bg-yellow-500 hover:border-yellow-500 transition-all duration-300 shadow-lg"
+                whileHover={{ scale: 1.1, rotate: 5 }}
+              >
+                <social.icon className={`h-8 w-8 ${social.color}`} />
+              </motion.a>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <p className="text-lg text-gray-700 mb-6">
+              {language === 'mr' ? 'जन बदलाव सोशल मीडियावर सक्रिय आहे' :
+                language === 'hi' ? 'जन बदलाव सोशल मीडिया पर सक्रिय है' : 'Jan Badlaav is active on social media'}
+            </p>
+            <Badge className="bg-yellow-500 text-black border-0 text-lg px-6 py-2">
+              {language === 'mr' ? '#जनबदलाव' :
+                language === 'hi' ? '#जनबदलाव' : '#JanBadlaav'}
+            </Badge>
           </div>
         </div>
       </section>

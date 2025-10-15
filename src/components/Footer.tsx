@@ -35,7 +35,7 @@ const Footer = () => {
 
   const navResources = [
     { to: '/media', label: t('media') },
-    { to: '/blog', label: t('blog') },
+    // { to: '/blog', label: t('blog') },
     { to: '/donate', label: t('donate') },
     { to: '/join', label: t('join') },
   ];
