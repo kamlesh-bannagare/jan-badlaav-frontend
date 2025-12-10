@@ -489,10 +489,10 @@ const Home = () => {
             }}
           >
             {language === 'mr'
-              ? 'जन बदलाव पक्ष  & this website created by (INDSC -kamlesh)'
+              ? 'जन बदलाव पक्ष  & this website created by (INDSC -kamleshB)'
               : language === 'hi'
-                ? 'जन बदलाव पक्ष  & this website created by (INDSC -kamlesh)'
-                : 'Jan Badlaav Party & this website created by (INDSC -kamlesh)'}
+                ? 'जन बदलाव पक्ष  & this website created by (INDSC -kamleshB)'
+                : 'Jan Badlaav Party & this website created by (INDSC -kamleshB)'}
           </h1>
 
           <p
