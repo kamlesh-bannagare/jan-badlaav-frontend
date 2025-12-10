@@ -6,6 +6,12 @@ pipeline {
     }
 
     stages {
+        stage('Check User') {
+            steps {
+                bat 'echo USER: & whoami'
+                bat 'echo HOME: %USERPROFILE%'
+            }
+        }
         stage('Install'){
             steps {
                 bat 'npm install'
